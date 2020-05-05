@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\AddCekKesehatan;
+namespace KCV\Dashboard\Core\Application\Service\AddCekKesehatan;
 
 class AddCekKesehatanRequest
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Infrastructure\Persistence;
+namespace KCV\Dashboard\Infrastructure\Persistence;
 
-use Kun\Dashboard\Core\Domain\Model\District;
-use Kun\Dashboard\Core\Domain\Repository\DistrictRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\District;
+use KCV\Dashboard\Core\Domain\Repository\DistrictRepositoryInterface;
 
 class SqlServerDistrictRepository implements DistrictRepositoryInterface
 {

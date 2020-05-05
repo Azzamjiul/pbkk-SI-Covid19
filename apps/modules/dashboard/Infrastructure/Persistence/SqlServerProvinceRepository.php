@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Infrastructure\Persistence;
+namespace KCV\Dashboard\Infrastructure\Persistence;
 
-use Kun\Dashboard\Core\Domain\Model\Province;
-use Kun\Dashboard\Core\Domain\Repository\ProvinceRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Province;
+use KCV\Dashboard\Core\Domain\Repository\ProvinceRepositoryInterface;
 
 class SqlServerProvinceRepository implements ProvinceRepositoryInterface
 {

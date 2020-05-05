@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetAllPasien;
+namespace KCV\Dashboard\Core\Application\Service\GetAllPasien;
 
-use Kun\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
 
 class GetAllPasienService
 {

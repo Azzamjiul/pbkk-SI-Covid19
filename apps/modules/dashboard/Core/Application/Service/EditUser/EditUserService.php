@@ -1,11 +1,11 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\EditUser;
+namespace KCV\Dashboard\Core\Application\Service\EditUser;
 
-use Kun\Dashboard\Core\Domain\Model\Password;
-use Kun\Dashboard\Core\Domain\Model\User;
-use Kun\Dashboard\Core\Domain\Model\UserId;
-use Kun\Dashboard\Core\Domain\Repository\UserRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Password;
+use KCV\Dashboard\Core\Domain\Model\User;
+use KCV\Dashboard\Core\Domain\Model\UserId;
+use KCV\Dashboard\Core\Domain\Repository\UserRepositoryInterface;
 
 class EditUserService 
 {

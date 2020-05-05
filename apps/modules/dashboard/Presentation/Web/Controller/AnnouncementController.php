@@ -1,10 +1,10 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use Kun\Dashboard\Core\Application\Service\AddAnnouncement\AddAnnouncementRequest;
-use Kun\Dashboard\Core\Application\Service\AddAnnouncement\AddAnnouncementService;
-use Kun\Dashboard\Core\Application\Service\GetAllAnnouncement\GetAllAnnouncementService;
+use KCV\Dashboard\Core\Application\Service\AddAnnouncement\AddAnnouncementRequest;
+use KCV\Dashboard\Core\Application\Service\AddAnnouncement\AddAnnouncementService;
+use KCV\Dashboard\Core\Application\Service\GetAllAnnouncement\GetAllAnnouncementService;
 
 /**
  * @property \Phalcon\Mvc\Controller

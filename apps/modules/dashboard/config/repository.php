@@ -1,14 +1,14 @@
 <?php
 
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerAnnouncementRepository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerCekKesehatanRepository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerDistrictRepository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerPasienRepository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerProvinceRepository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerRegencyRepository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerStatusCovid19Repository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerUserInfoRepository;
-use Kun\Dashboard\Infrastructure\Persistence\SqlServerUserRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerAnnouncementRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerCekKesehatanRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerDistrictRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerPasienRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerProvinceRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerRegencyRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerStatusCovid19Repository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerUserInfoRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerUserRepository;
 
 $di->set('sqlServerUserRepository', function() use ($di) {
     return new SqlServerUserRepository($di->get('db'));

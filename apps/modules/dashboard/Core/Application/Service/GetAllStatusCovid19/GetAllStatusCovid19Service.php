@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetAllStatusCovid19;
+namespace KCV\Dashboard\Core\Application\Service\GetAllStatusCovid19;
 
-use Kun\Dashboard\Core\Domain\Repository\StatusCovid19RepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\StatusCovid19RepositoryInterface;
 
 class GetAllStatusCovid19Service
 {

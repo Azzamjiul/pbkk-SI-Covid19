@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetCountKasus;
+namespace KCV\Dashboard\Core\Application\Service\GetCountKasus;
 
-use Kun\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
 
 class GetCountKasusService
 {

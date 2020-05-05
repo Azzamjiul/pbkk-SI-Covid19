@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Domain\Repository;
+namespace KCV\Dashboard\Core\Domain\Repository;
 
-use Kun\Dashboard\Core\Domain\Model\StatusCovid19;
+use KCV\Dashboard\Core\Domain\Model\StatusCovid19;
 
 interface StatusCovid19RepositoryInterface
 {

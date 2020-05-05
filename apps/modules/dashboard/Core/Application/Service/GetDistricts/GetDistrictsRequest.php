@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetDistricts;
+namespace KCV\Dashboard\Core\Application\Service\GetDistricts;
 
 class GetDistrictsRequest
 {

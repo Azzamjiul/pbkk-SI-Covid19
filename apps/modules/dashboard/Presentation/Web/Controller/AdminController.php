@@ -1,12 +1,12 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use Kun\Dashboard\Core\Application\Service\EditUser\EditUserRequest;
-use Kun\Dashboard\Core\Application\Service\EditUser\EditUserService;
-use Kun\Dashboard\Core\Application\Service\FindUserById\FindUserByIdRequest;
-use Kun\Dashboard\Core\Application\Service\FindUserById\FindUserByIdService;
-use Kun\Dashboard\Core\Application\Service\GetAllUser\GetAllUserService;
+use KCV\Dashboard\Core\Application\Service\EditUser\EditUserRequest;
+use KCV\Dashboard\Core\Application\Service\EditUser\EditUserService;
+use KCV\Dashboard\Core\Application\Service\FindUserById\FindUserByIdRequest;
+use KCV\Dashboard\Core\Application\Service\FindUserById\FindUserByIdService;
+use KCV\Dashboard\Core\Application\Service\GetAllUser\GetAllUserService;
 
 class AdminController extends BaseController
 {

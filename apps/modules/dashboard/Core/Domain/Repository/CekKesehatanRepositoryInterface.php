@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Core\Domain\Repository;
+namespace KCV\Dashboard\Core\Domain\Repository;
 
-use Kun\Dashboard\Core\Domain\Model\CekKesehatan;
-use Kun\Dashboard\Core\Domain\Model\CekKesehatanId;
+use KCV\Dashboard\Core\Domain\Model\CekKesehatan;
+use KCV\Dashboard\Core\Domain\Model\CekKesehatanId;
 
 interface CekKesehatanRepositoryInterface
 {

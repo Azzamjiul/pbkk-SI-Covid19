@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Infrastructure\Persistence;
+namespace KCV\Dashboard\Infrastructure\Persistence;
 
-use Kun\Dashboard\Core\Domain\Model\Regency;
-use Kun\Dashboard\Core\Domain\Repository\RegencyRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Regency;
+use KCV\Dashboard\Core\Domain\Repository\RegencyRepositoryInterface;
 
 class SqlServerRegencyRepository implements RegencyRepositoryInterface 
 {

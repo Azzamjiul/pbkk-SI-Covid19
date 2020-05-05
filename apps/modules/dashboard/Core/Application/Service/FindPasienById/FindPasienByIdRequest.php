@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\FindPasienById;
+namespace KCV\Dashboard\Core\Application\Service\FindPasienById;
 
 class FindPasienByIdRequest 
 {

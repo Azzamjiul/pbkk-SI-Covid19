@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\LoginUser;
+namespace KCV\Dashboard\Core\Application\Service\LoginUser;
 
-use Kun\Dashboard\Core\Domain\Repository\UserRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\UserRepositoryInterface;
 
 class LoginUserService 
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\AddAnnouncement;
+namespace KCV\Dashboard\Core\Application\Service\AddAnnouncement;
 
-use Kun\Dashboard\Core\Domain\Model\Announcement;
-use Kun\Dashboard\Core\Domain\Model\AnnouncementId;
-use Kun\Dashboard\Core\Domain\Repository\AnnouncementRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Announcement;
+use KCV\Dashboard\Core\Domain\Model\AnnouncementId;
+use KCV\Dashboard\Core\Domain\Repository\AnnouncementRepositoryInterface;
 
 class AddAnnouncementService
 {

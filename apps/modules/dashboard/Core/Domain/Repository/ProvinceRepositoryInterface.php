@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Domain\Repository;
+namespace KCV\Dashboard\Core\Domain\Repository;
 
 interface ProvinceRepositoryInterface 
 {

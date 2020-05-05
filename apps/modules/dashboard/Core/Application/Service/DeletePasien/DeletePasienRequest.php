@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\DeletePasien;
+namespace KCV\Dashboard\Core\Application\Service\DeletePasien;
 
 class DeletePasienRequest
 {

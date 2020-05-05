@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\EditUser;
+namespace KCV\Dashboard\Core\Application\Service\EditUser;
 
 class EditUserRequest 
 {

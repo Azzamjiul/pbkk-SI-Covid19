@@ -1,10 +1,10 @@
 <?php
 
-namespace Kun\Dashboard\Infrastructure\Persistence;
+namespace KCV\Dashboard\Infrastructure\Persistence;
 
-use Kun\Dashboard\Core\Domain\Model\Announcement;
-use Kun\Dashboard\Core\Domain\Model\AnnouncementId;
-use Kun\Dashboard\Core\Domain\Repository\AnnouncementRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Announcement;
+use KCV\Dashboard\Core\Domain\Model\AnnouncementId;
+use KCV\Dashboard\Core\Domain\Repository\AnnouncementRepositoryInterface;
 
 class SqlServerAnnouncementRepository implements AnnouncementRepositoryInterface
 {

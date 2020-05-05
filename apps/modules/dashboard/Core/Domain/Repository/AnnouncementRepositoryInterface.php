@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Core\Domain\Repository;
+namespace KCV\Dashboard\Core\Domain\Repository;
 
-use Kun\Dashboard\Core\Domain\Model\Announcement;
-use Kun\Dashboard\Core\Domain\Model\AnnouncementId;
+use KCV\Dashboard\Core\Domain\Model\Announcement;
+use KCV\Dashboard\Core\Domain\Model\AnnouncementId;
 
 interface AnnouncementRepositoryInterface
 {

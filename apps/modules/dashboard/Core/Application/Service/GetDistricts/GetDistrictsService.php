@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetDistricts;
+namespace KCV\Dashboard\Core\Application\Service\GetDistricts;
 
-use Kun\Dashboard\Core\Domain\Repository\DistrictRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\DistrictRepositoryInterface;
 
 class GetDistrictsService
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use Kun\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
-use Kun\Dashboard\Core\Application\Service\GetDistricts\GetDistrictsRequest;
-use Kun\Dashboard\Core\Application\Service\GetDistricts\GetDistrictsService;
-use Kun\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesRequest;
-use Kun\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesService;
+use KCV\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
+use KCV\Dashboard\Core\Application\Service\GetDistricts\GetDistrictsRequest;
+use KCV\Dashboard\Core\Application\Service\GetDistricts\GetDistrictsService;
+use KCV\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesRequest;
+use KCV\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesService;
 
 class AddressController extends BaseController
 {

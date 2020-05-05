@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\FindPasienById;
+namespace KCV\Dashboard\Core\Application\Service\FindPasienById;
 
-use Kun\Dashboard\Core\Domain\Model\PasienId;
-use Kun\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\PasienId;
+use KCV\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
 
 class FindPasienByIdService
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetRegencies;
+namespace KCV\Dashboard\Core\Application\Service\GetRegencies;
 
-use Kun\Dashboard\Core\Domain\Model\Regency;
-use Kun\Dashboard\Core\Domain\Repository\RegencyRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Regency;
+use KCV\Dashboard\Core\Domain\Repository\RegencyRepositoryInterface;
 
 class GetRegenciesService
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
 use DateTime;
-use Kun\Dashboard\Core\Application\Service\GetCountKasus\GetCountKasusResponse;
-use Kun\Dashboard\Core\Application\Service\GetCountKasus\GetCountKasusService;
-use Kun\Dashboard\Core\Application\Service\GetCountKasusByPlace\GetCountKasusByPlaceService;
+use KCV\Dashboard\Core\Application\Service\GetCountKasus\GetCountKasusResponse;
+use KCV\Dashboard\Core\Application\Service\GetCountKasus\GetCountKasusService;
+use KCV\Dashboard\Core\Application\Service\GetCountKasusByPlace\GetCountKasusByPlaceService;
 
 class IndexController extends BaseController
 {

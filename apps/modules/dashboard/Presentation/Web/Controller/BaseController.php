@@ -1,12 +1,12 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use Kun\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdRequest;
-use Kun\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdService;
-use Kun\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
-use Kun\Dashboard\Core\Application\Service\GetAllStatusCovid19\GetAllStatusCovid19Service;
-use Kun\Dashboard\Core\Application\Service\GetLastAnnouncement\GetLastAnnouncementService;
+use KCV\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdRequest;
+use KCV\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdService;
+use KCV\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
+use KCV\Dashboard\Core\Application\Service\GetAllStatusCovid19\GetAllStatusCovid19Service;
+use KCV\Dashboard\Core\Application\Service\GetLastAnnouncement\GetLastAnnouncementService;
 use Phalcon\Mvc\Controller;
 
 class BaseController extends Controller

@@ -1,6 +1,6 @@
 <?php
 
-$namespace = 'Kun\Dashboard\Presentation\Web\Controller';
+$namespace = 'KCV\Dashboard\Presentation\Web\Controller';
 
 /**
  * @var \Phalcon\Mvc\Router $router

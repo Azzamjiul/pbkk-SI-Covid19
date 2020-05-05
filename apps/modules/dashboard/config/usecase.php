@@ -1,28 +1,28 @@
 <?php
 
-use Kun\Dashboard\Core\Application\Service\AddAnnouncement\AddAnnouncementService;
-use Kun\Dashboard\Core\Application\Service\AddCekKesehatan\AddCekKesehatanService;
-use Kun\Dashboard\Core\Application\Service\AddPasien\AddPasienService;
-use Kun\Dashboard\Core\Application\Service\AddUser\AddUserService;
-use Kun\Dashboard\Core\Application\Service\DeletePasien\DeletePasienService;
-use Kun\Dashboard\Core\Application\Service\EditCekKesehatan\EditCekKesehatanService;
-use Kun\Dashboard\Core\Application\Service\EditPasien\EditPasienService;
-use Kun\Dashboard\Core\Application\Service\EditUser\EditUserService;
-use Kun\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdService;
-use Kun\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdService;
-use Kun\Dashboard\Core\Application\Service\FindUserById\FindUserByIdService;
-use Kun\Dashboard\Core\Application\Service\GetAllAnnouncement\GetAllAnnouncementService;
-use Kun\Dashboard\Core\Application\Service\GetAllCekKesehatan\GetAllCekKesehatanService;
-use Kun\Dashboard\Core\Application\Service\GetAllPasien\GetAllPasienService;
-use Kun\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
-use Kun\Dashboard\Core\Application\Service\GetAllStatusCovid19\GetAllStatusCovid19Service;
-use Kun\Dashboard\Core\Application\Service\GetAllUser\GetAllUserService;
-use Kun\Dashboard\Core\Application\Service\GetCountKasus\GetCountKasusService;
-use Kun\Dashboard\Core\Application\Service\GetCountKasusByPlace\GetCountKasusByPlaceService;
-use Kun\Dashboard\Core\Application\Service\GetDistricts\GetDistrictsService;
-use Kun\Dashboard\Core\Application\Service\GetLastAnnouncement\GetLastAnnouncementService;
-use Kun\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesService;
-use Kun\Dashboard\Core\Application\Service\LoginUser\LoginUserService;
+use KCV\Dashboard\Core\Application\Service\AddAnnouncement\AddAnnouncementService;
+use KCV\Dashboard\Core\Application\Service\AddCekKesehatan\AddCekKesehatanService;
+use KCV\Dashboard\Core\Application\Service\AddPasien\AddPasienService;
+use KCV\Dashboard\Core\Application\Service\AddUser\AddUserService;
+use KCV\Dashboard\Core\Application\Service\DeletePasien\DeletePasienService;
+use KCV\Dashboard\Core\Application\Service\EditCekKesehatan\EditCekKesehatanService;
+use KCV\Dashboard\Core\Application\Service\EditPasien\EditPasienService;
+use KCV\Dashboard\Core\Application\Service\EditUser\EditUserService;
+use KCV\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdService;
+use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdService;
+use KCV\Dashboard\Core\Application\Service\FindUserById\FindUserByIdService;
+use KCV\Dashboard\Core\Application\Service\GetAllAnnouncement\GetAllAnnouncementService;
+use KCV\Dashboard\Core\Application\Service\GetAllCekKesehatan\GetAllCekKesehatanService;
+use KCV\Dashboard\Core\Application\Service\GetAllPasien\GetAllPasienService;
+use KCV\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
+use KCV\Dashboard\Core\Application\Service\GetAllStatusCovid19\GetAllStatusCovid19Service;
+use KCV\Dashboard\Core\Application\Service\GetAllUser\GetAllUserService;
+use KCV\Dashboard\Core\Application\Service\GetCountKasus\GetCountKasusService;
+use KCV\Dashboard\Core\Application\Service\GetCountKasusByPlace\GetCountKasusByPlaceService;
+use KCV\Dashboard\Core\Application\Service\GetDistricts\GetDistrictsService;
+use KCV\Dashboard\Core\Application\Service\GetLastAnnouncement\GetLastAnnouncementService;
+use KCV\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesService;
+use KCV\Dashboard\Core\Application\Service\LoginUser\LoginUserService;
 
 //=================
 //-----User Usecase

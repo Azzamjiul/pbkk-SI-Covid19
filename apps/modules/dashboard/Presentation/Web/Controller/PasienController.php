@@ -1,16 +1,16 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use Kun\Dashboard\Core\Application\Service\AddPasien\AddPasienRequest;
-use Kun\Dashboard\Core\Application\Service\AddPasien\AddPasienService;
-use Kun\Dashboard\Core\Application\Service\DeletePasien\DeletePasienRequest;
-use Kun\Dashboard\Core\Application\Service\DeletePasien\DeletePasienService;
-use Kun\Dashboard\Core\Application\Service\EditPasien\EditPasienRequest;
-use Kun\Dashboard\Core\Application\Service\EditPasien\EditPasienService;
-use Kun\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdRequest;
-use Kun\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdService;
-use Kun\Dashboard\Core\Application\Service\GetAllPasien\GetAllPasienService;
+use KCV\Dashboard\Core\Application\Service\AddPasien\AddPasienRequest;
+use KCV\Dashboard\Core\Application\Service\AddPasien\AddPasienService;
+use KCV\Dashboard\Core\Application\Service\DeletePasien\DeletePasienRequest;
+use KCV\Dashboard\Core\Application\Service\DeletePasien\DeletePasienService;
+use KCV\Dashboard\Core\Application\Service\EditPasien\EditPasienRequest;
+use KCV\Dashboard\Core\Application\Service\EditPasien\EditPasienService;
+use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdRequest;
+use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdService;
+use KCV\Dashboard\Core\Application\Service\GetAllPasien\GetAllPasienService;
 
 class PasienController extends BaseController
 {

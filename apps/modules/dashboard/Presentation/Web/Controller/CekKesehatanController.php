@@ -1,14 +1,14 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use Kun\Dashboard\Core\Application\Service\AddCekKesehatan\AddCekKesehatanRequest;
-use Kun\Dashboard\Core\Application\Service\AddCekKesehatan\AddCekKesehatanService;
-use Kun\Dashboard\Core\Application\Service\EditCekKesehatan\EditCekKesehatanRequest;
-use Kun\Dashboard\Core\Application\Service\EditCekKesehatan\EditCekKesehatanService;
-use Kun\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdRequest;
-use Kun\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdService;
-use Kun\Dashboard\Core\Application\Service\GetAllCekKesehatan\GetAllCekKesehatanService;
+use KCV\Dashboard\Core\Application\Service\AddCekKesehatan\AddCekKesehatanRequest;
+use KCV\Dashboard\Core\Application\Service\AddCekKesehatan\AddCekKesehatanService;
+use KCV\Dashboard\Core\Application\Service\EditCekKesehatan\EditCekKesehatanRequest;
+use KCV\Dashboard\Core\Application\Service\EditCekKesehatan\EditCekKesehatanService;
+use KCV\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdRequest;
+use KCV\Dashboard\Core\Application\Service\FindCekKesehatanById\FindCekKesehatanByIdService;
+use KCV\Dashboard\Core\Application\Service\GetAllCekKesehatan\GetAllCekKesehatanService;
 
 class CekKesehatanController extends BaseController
 {

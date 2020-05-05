@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetRegencies;
+namespace KCV\Dashboard\Core\Application\Service\GetRegencies;
 
 class GetRegenciesRequest
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\AddCekKesehatan;
+namespace KCV\Dashboard\Core\Application\Service\AddCekKesehatan;
 
-use Kun\Dashboard\Core\Domain\Model\CekKesehatan;
-use Kun\Dashboard\Core\Domain\Model\CekKesehatanId;
-use Kun\Dashboard\Core\Domain\Repository\CekKesehatanRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\CekKesehatan;
+use KCV\Dashboard\Core\Domain\Model\CekKesehatanId;
+use KCV\Dashboard\Core\Domain\Repository\CekKesehatanRepositoryInterface;
 
 class AddCekKesehatanService
 {

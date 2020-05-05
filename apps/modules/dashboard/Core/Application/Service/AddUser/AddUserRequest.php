@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\AddUser;
+namespace KCV\Dashboard\Core\Application\Service\AddUser;
 
 class AddUserRequest 
 {

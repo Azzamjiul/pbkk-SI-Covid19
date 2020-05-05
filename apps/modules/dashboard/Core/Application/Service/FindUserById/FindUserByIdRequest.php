@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\FindUserById;
+namespace KCV\Dashboard\Core\Application\Service\FindUserById;
 
 class FindUserByIdRequest 
 {

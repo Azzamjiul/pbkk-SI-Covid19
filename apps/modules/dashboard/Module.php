@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard;
+namespace KCV\Dashboard;
 
 use Phalcon\Di\DiInterface;
 use Phalcon\Loader;
@@ -14,19 +14,19 @@ class Module implements ModuleDefinitionInterface
 
         $loader->registerNamespaces([
 
-            'Kun\Dashboard\Core\Domain\Event' => __DIR__ . '/Core/Domain/Event',
-            'Kun\Dashboard\Core\Domain\Model' => __DIR__ . '/Core/Domain/Model',
-            'Kun\Dashboard\Core\Domain\Repository' => __DIR__ . '/Core/Domain/Repository',
-            'Kun\Dashboard\Core\Domain\Service' => __DIR__ . '/Core/Domain/Service',
+            'KCV\Dashboard\Core\Domain\Event' => __DIR__ . '/Core/Domain/Event',
+            'KCV\Dashboard\Core\Domain\Model' => __DIR__ . '/Core/Domain/Model',
+            'KCV\Dashboard\Core\Domain\Repository' => __DIR__ . '/Core/Domain/Repository',
+            'KCV\Dashboard\Core\Domain\Service' => __DIR__ . '/Core/Domain/Service',
 
-            'Kun\Dashboard\Core\Application\Service' => __DIR__ . '/Core/Application/Service',
-            'Kun\Dashboard\Core\Application\EventSubscriber' => __DIR__ . '/Core/Application/EventSubscriber',
+            'KCV\Dashboard\Core\Application\Service' => __DIR__ . '/Core/Application/Service',
+            'KCV\Dashboard\Core\Application\EventSubscriber' => __DIR__ . '/Core/Application/EventSubscriber',
 
-            'Kun\Dashboard\Infrastructure\Persistence' => __DIR__ . '/Infrastructure/Persistence',
+            'KCV\Dashboard\Infrastructure\Persistence' => __DIR__ . '/Infrastructure/Persistence',
 
-            'Kun\Dashboard\Presentation\Web\Controller' => __DIR__ . '/Presentation/Web/Controller',
-            'Kun\Dashboard\Presentation\Web\Validator' => __DIR__ . '/Presentation/Web/Validator',
-            'Kun\Dashboard\Presentation\Api\Controller' => __DIR__ . '/Presentation/Api/Controller',
+            'KCV\Dashboard\Presentation\Web\Controller' => __DIR__ . '/Presentation/Web/Controller',
+            'KCV\Dashboard\Presentation\Web\Validator' => __DIR__ . '/Presentation/Web/Validator',
+            'KCV\Dashboard\Presentation\Api\Controller' => __DIR__ . '/Presentation/Api/Controller',
             
         ]);
 

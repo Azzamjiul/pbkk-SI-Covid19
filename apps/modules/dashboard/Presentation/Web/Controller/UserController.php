@@ -1,12 +1,12 @@
 <?php
 
-namespace Kun\Dashboard\Presentation\Web\Controller;
+namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use Kun\Dashboard\Core\Application\Service\AddUser\AddUserRequest;
-use Kun\Dashboard\Core\Application\Service\AddUser\AddUserService;
-use Kun\Dashboard\Core\Application\Service\FindUserById\FindUserByIdRequest;
-use Kun\Dashboard\Core\Application\Service\FindUserById\FindUserByIdService;
-use Kun\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
+use KCV\Dashboard\Core\Application\Service\AddUser\AddUserRequest;
+use KCV\Dashboard\Core\Application\Service\AddUser\AddUserService;
+use KCV\Dashboard\Core\Application\Service\FindUserById\FindUserByIdRequest;
+use KCV\Dashboard\Core\Application\Service\FindUserById\FindUserByIdService;
+use KCV\Dashboard\Core\Application\Service\GetAllProvince\GetAllProvinceService;
 
 class UserController extends BaseController
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Kun\Dashboard\Infrastructure\Persistence;
+namespace KCV\Dashboard\Infrastructure\Persistence;
 
-use Kun\Dashboard\Core\Domain\Model\Kasus;
-use Kun\Dashboard\Core\Domain\Model\Pasien;
-use Kun\Dashboard\Core\Domain\Model\PasienId;
-use Kun\Dashboard\Core\Domain\Model\StatusCovid19;
-use Kun\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Kasus;
+use KCV\Dashboard\Core\Domain\Model\Pasien;
+use KCV\Dashboard\Core\Domain\Model\PasienId;
+use KCV\Dashboard\Core\Domain\Model\StatusCovid19;
+use KCV\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
 
 class SqlServerPasienRepository implements PasienRepositoryInterface
 {

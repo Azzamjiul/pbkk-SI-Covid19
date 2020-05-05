@@ -1,10 +1,10 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\AddPasien;
+namespace KCV\Dashboard\Core\Application\Service\AddPasien;
 
-use Kun\Dashboard\Core\Domain\Model\Pasien;
-use Kun\Dashboard\Core\Domain\Model\PasienId;
-use Kun\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\Pasien;
+use KCV\Dashboard\Core\Domain\Model\PasienId;
+use KCV\Dashboard\Core\Domain\Repository\PasienRepositoryInterface;
 
 class AddPasienService
 {

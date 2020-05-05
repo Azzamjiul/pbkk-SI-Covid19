@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetAllProvince;
+namespace KCV\Dashboard\Core\Application\Service\GetAllProvince;
 
-use Kun\Dashboard\Core\Domain\Repository\ProvinceRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\ProvinceRepositoryInterface;
 
 class GetAllProvinceService
 {

@@ -2,10 +2,10 @@
 
 return array(
     'dashboard' => [
-        'namespace' => 'Kun\Dashboard',
-        'webControllerNamespace' => 'Kun\Dashboard\Presentation\Web\Controller',
+        'namespace' => 'KCV\Dashboard',
+        'webControllerNamespace' => 'KCV\Dashboard\Presentation\Web\Controller',
         'apiControllerNamespace' => '',
-        'className' => 'Kun\Dashboard\Module',
+        'className' => 'KCV\Dashboard\Module',
         'path' => APP_PATH . '/modules/dashboard/Module.php',
         'defaultRouting' => false,
         'defaultController' => 'index',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\AddAnnouncement;
+namespace KCV\Dashboard\Core\Application\Service\AddAnnouncement;
 
 class AddAnnouncementRequest
 {

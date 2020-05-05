@@ -1,6 +1,6 @@
 <?php
 
-namespace Kun\Dashboard\Core\Domain\Model;
+namespace KCV\Dashboard\Core\Domain\Model;
 
 class User
 {

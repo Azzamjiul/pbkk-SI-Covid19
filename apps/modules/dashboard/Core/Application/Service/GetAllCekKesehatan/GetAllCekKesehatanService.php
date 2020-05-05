@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetAllCekKesehatan;
+namespace KCV\Dashboard\Core\Application\Service\GetAllCekKesehatan;
 
-use Kun\Dashboard\Core\Domain\Repository\CekKesehatanRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\CekKesehatanRepositoryInterface;
 
 class GetAllCekKesehatanService
 {

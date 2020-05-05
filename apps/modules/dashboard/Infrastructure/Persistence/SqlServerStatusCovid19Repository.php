@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Infrastructure\Persistence;
+namespace KCV\Dashboard\Infrastructure\Persistence;
 
-use Kun\Dashboard\Core\Domain\Model\StatusCovid19;
-use Kun\Dashboard\Core\Domain\Repository\StatusCovid19RepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\StatusCovid19;
+use KCV\Dashboard\Core\Domain\Repository\StatusCovid19RepositoryInterface;
 
 class SqlServerStatusCovid19Repository implements StatusCovid19RepositoryInterface
 {

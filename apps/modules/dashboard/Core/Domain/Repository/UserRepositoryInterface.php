@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Core\Domain\Repository;
+namespace KCV\Dashboard\Core\Domain\Repository;
 
-use Kun\Dashboard\Core\Domain\Model\User;
-use Kun\Dashboard\Core\Domain\Model\UserId;
+use KCV\Dashboard\Core\Domain\Model\User;
+use KCV\Dashboard\Core\Domain\Model\UserId;
 
 interface UserRepositoryInterface 
 {

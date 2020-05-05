@@ -1,8 +1,8 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\GetLastAnnouncement;
+namespace KCV\Dashboard\Core\Application\Service\GetLastAnnouncement;
 
-use Kun\Dashboard\Core\Domain\Repository\AnnouncementRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Repository\AnnouncementRepositoryInterface;
 
 class GetLastAnnouncementService
 {

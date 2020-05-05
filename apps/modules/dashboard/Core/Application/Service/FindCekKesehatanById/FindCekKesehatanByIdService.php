@@ -1,9 +1,9 @@
 <?php
 
-namespace Kun\Dashboard\Core\Application\Service\FindCekKesehatanById;
+namespace KCV\Dashboard\Core\Application\Service\FindCekKesehatanById;
 
-use Kun\Dashboard\Core\Domain\Model\CekKesehatanId;
-use Kun\Dashboard\Core\Domain\Repository\CekKesehatanRepositoryInterface;
+use KCV\Dashboard\Core\Domain\Model\CekKesehatanId;
+use KCV\Dashboard\Core\Domain\Repository\CekKesehatanRepositoryInterface;
 
 class FindCekKesehatanByIdService
 {
