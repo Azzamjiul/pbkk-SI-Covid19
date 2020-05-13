@@ -1,13 +1,13 @@
 -- Keterangan:
--- Ubah fp_pbkk.dbo sesuai schema
+-- Ubah TestDB.dbo sesuai schema
 
--- Create a new table called 'users' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'users' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.users', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.users
+IF OBJECT_ID('TestDB.dbo.users', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.users
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.users
+CREATE TABLE TestDB.dbo.users
 (
     user_id [VARCHAR](36) NOT NULL PRIMARY KEY, -- primary key column
     username [VARCHAR](100) NOT NULL,
@@ -27,13 +27,13 @@ CREATE TABLE fp_pbkk.dbo.users
 );
 GO
 
--- Create a new table called 'announcements' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'announcements' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.announcements', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.announcements
+IF OBJECT_ID('TestDB.dbo.announcements', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.announcements
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.announcements
+CREATE TABLE TestDB.dbo.announcements
 (
     id [VARCHAR](36) NOT NULL PRIMARY KEY, -- primary key column
     title [VARCHAR](100) NOT NULL,
@@ -42,13 +42,13 @@ CREATE TABLE fp_pbkk.dbo.announcements
 );
 GO
 
--- Create a new table called 'cek_kesehatans' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'cek_kesehatans' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.cek_kesehatans', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.cek_kesehatans
+IF OBJECT_ID('TestDB.dbo.cek_kesehatans', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.cek_kesehatans
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.cek_kesehatans
+CREATE TABLE TestDB.dbo.cek_kesehatans
 (
     id [VARCHAR](36) NOT NULL PRIMARY KEY, -- primary key column
     user_id [VARCHAR](36) NOT NULL,
@@ -62,26 +62,26 @@ CREATE TABLE fp_pbkk.dbo.cek_kesehatans
 );
 GO
 
--- Create a new table called 'provinces' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'provinces' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.provinces', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.provinces
+IF OBJECT_ID('TestDB.dbo.provinces', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.provinces
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.provinces
+CREATE TABLE TestDB.dbo.provinces
 (
     id [CHAR](2) NOT NULL PRIMARY KEY, -- primary key column
     name [VARCHAR](100) NOT NULL
 );
 GO
 
--- Create a new table called 'regencies' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'regencies' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.regencies', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.regencies
+IF OBJECT_ID('TestDB.dbo.regencies', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.regencies
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.regencies
+CREATE TABLE TestDB.dbo.regencies
 (
     id [char](4) NOT NULL PRIMARY KEY, -- primary key column
     province_id [CHAR](2) NOT NULL,
@@ -89,13 +89,13 @@ CREATE TABLE fp_pbkk.dbo.regencies
 );
 GO
 
--- Create a new table called 'districts' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'districts' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.districts', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.districts
+IF OBJECT_ID('TestDB.dbo.districts', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.districts
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.districts
+CREATE TABLE TestDB.dbo.districts
 (
     id [CHAR](7) NOT NULL PRIMARY KEY, -- primary key column
     regency_id [CHAR](4) NOT NULL,
@@ -103,13 +103,13 @@ CREATE TABLE fp_pbkk.dbo.districts
 );
 GO
 
--- Create a new table called 'status_covid19' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'status_covid19' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.status_covid19', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.status_covid19
+IF OBJECT_ID('TestDB.dbo.status_covid19', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.status_covid19
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.status_covid19
+CREATE TABLE TestDB.dbo.status_covid19
 (
     id [VARCHAR](36) NOT NULL PRIMARY KEY, -- primary key column
     nama [VARCHAR](32) NOT NULL,
@@ -117,13 +117,13 @@ CREATE TABLE fp_pbkk.dbo.status_covid19
 );
 GO
 
--- Create a new table called 'pasiens' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'pasiens' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.pasiens', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.pasiens
+IF OBJECT_ID('TestDB.dbo.pasiens', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.pasiens
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.pasiens
+CREATE TABLE TestDB.dbo.pasiens
 (
     id [VARCHAR](36) NOT NULL PRIMARY KEY, -- primary key column
     nama_lengkap [VARCHAR](100) NOT NULL,
