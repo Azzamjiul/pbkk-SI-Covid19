@@ -18,7 +18,7 @@ CREATE TABLE fp_pbkk.dbo.users
     pasien_id [VARCHAR](36),
     role [INT],
     identity_type [INT],
-    identity_number [VARCHAR](64).
+    identity_number [VARCHAR](64),
     name [VARCHAR](128),
     address [VARCHAR](256),
     sex [INT]
