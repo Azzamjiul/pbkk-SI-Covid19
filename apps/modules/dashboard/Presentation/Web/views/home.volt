@@ -61,7 +61,11 @@
     </div>
     <div class="col-3 col-sm-3 kartu kartu-hijau text-center">
         <h5>PDP</h5>
-        <h2>{{ jumlah['PDP'] }}</h2>
+        <h2>{% if jumlah['PDP'] is defined %}
+        {{ jumlah['PDP'] }}
+        {% else %}
+        0
+        {% endif %}</h2>
     </div>
     <div class="col-3 col-sm-3 kartu kartu-merah text-center">
         <h5>Positif</h5>
