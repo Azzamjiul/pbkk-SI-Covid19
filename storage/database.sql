@@ -13,6 +13,15 @@ CREATE TABLE fp_pbkk.dbo.users
     username [VARCHAR](100) NOT NULL,
     email [VARCHAR](50) NOT NULL,
     password [VARCHAR](255) NOT NULL,
+    hospital_id [INT],
+    district_id [CHAR](10),
+    pasien_id [VARCHAR](36),
+    role [INT],
+    identity_type [INT],
+    identity_number [VARCHAR](64).
+    name [VARCHAR](128),
+    address [VARCHAR](256),
+    sex [INT]
 
     -- specify more columns here
 );
