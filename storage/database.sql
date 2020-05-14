@@ -21,7 +21,8 @@ CREATE TABLE TestDB.dbo.users
     identity_number [VARCHAR](64),
     name [VARCHAR](128),
     address [VARCHAR](256),
-    sex [INT]
+    sex [INT],
+    queue_status [INT]
 
     -- specify more columns here
 );
