@@ -50,6 +50,7 @@
 <div class="text-center mb-5 font-weight-bold">
     <h3> SISTEM INFORMASI COVID-19 (Beta version) </h3>
 </div>
+
 <div class="row justify-content-center mb-4">
   <div class="col-4 col-sm-4 kartu kartu-merah">
       <h5 class="text-center">ANTREAN</h5>
