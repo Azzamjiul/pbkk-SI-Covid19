@@ -141,3 +141,42 @@ CREATE TABLE fp_pbkk.dbo.pasiens
     -- specify more columns here
 );
 GO
+
+-- Create a new table called 'antrean' in schema 'fp_pbkk.dbo'
+-- Drop the table if it already exists
+IF OBJECT_ID('fp_pbkk.dbo.antrean', 'U') IS NOT NULL
+DROP TABLE fp_pbkk.dbo.antrean
+GO
+-- Create the table in the specified schema
+CREATE TABLE fp_pbkk.dbo.antrean
+(
+    id [INT] NOT NULL IDENTITY(1,1) PRIMARY KEY, -- primary key column
+    [timestamp] DATETIME,
+    user_id [VARCHAR](36) NOT NULL,
+    hospital_id [INT] NOT NULL,
+    status [INT] NOT NULL
+    -- specify more columns here
+);
+GO
+
+-- Create a new table called 'hospital' in schema 'fp_pbkk.dbo'
+-- Drop the table if it already exists
+IF OBJECT_ID('fp_pbkk.dbo.hospital', 'U') IS NOT NULL
+DROP TABLE fp_pbkk.dbo.hospital
+GO
+-- Create the table in the specified schema
+CREATE TABLE fp_pbkk.dbo.hospital
+(
+    id [INT] NOT NULL IDENTITY(1,1) PRIMARY KEY, -- primary key column
+    name [VARCHAR](256) NOT NULL,
+    address [VARCHAR](256) NOT NULL,
+    district_id [CHAR](7) NOT NULL,
+    quota [INT],
+    filled [INT],
+    doctor_number [INT],
+    nurse_number [INT],
+    personnel_number [INT],
+    queue_status [INT]
+    -- specify more columns here
+);
+GO
