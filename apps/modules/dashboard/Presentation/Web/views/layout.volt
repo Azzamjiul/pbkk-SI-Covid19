@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta name="description" content="Final Project PBKK">
-    <meta name="author" content="Fandy Kuncoro Adianto">
+    <meta name="author" content="Fandy Kuncoro Adianto & Ahmad Syauqi">
     <title>{% block title %}{% endblock %} | SI-COVID19</title>
     <link rel="icon" type="image/png" href="{{ url('assets/img/logo.png') }}" />
     {# <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"> #}

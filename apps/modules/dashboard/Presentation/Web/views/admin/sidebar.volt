@@ -48,6 +48,22 @@
         <span>Cek Kesehatan</span></a>
     </li>
 
+    <!-- Nav Item - Tables -->
+    <li class="nav-item" id="nav-rumahsakit">
+        <a class="nav-link" href="{{ url('admin/rumah-sakit') }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Rumah Sakit</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item" id="nav-adminrumahsakit">
+        <a class="nav-link" href="{{ url('admin/admin-rumah-sakit') }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Admin Rumah Sakit</span>
+        </a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

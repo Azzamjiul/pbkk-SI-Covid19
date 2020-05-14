@@ -24,6 +24,16 @@ use KCV\Dashboard\Core\Application\Service\GetLastAnnouncement\GetLastAnnounceme
 use KCV\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesService;
 use KCV\Dashboard\Core\Application\Service\LoginUser\LoginUserService;
 
+use KCV\Dashboard\Core\Application\Service\GetAllHospital\GetAllHospitalService;
+
+//=================
+//-----User Usecase
+//=================
+$di->set('getAllHospitalService', function() use ($di) {
+    return new GetAllHospitalService($di->get('sqlServerHospitalRepository'));
+});
+
+
 //=================
 //-----User Usecase
 //=================

@@ -194,4 +194,14 @@ $router->addPost('/get/district', [
     'action' => 'getDistricts'
 ]);
 
+//================
+//-----Rumah Sakit
+//================
+$router->addGet('/admin/rumah-sakit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospital',
+    'action' => 'index'
+]);
+
 // return $router;
