@@ -62,8 +62,8 @@
                     <td>{{ hospital.getPersonnelNumber() }}</td>
                     <td>{{ hospital.getAddress() }}</td>
                     <td>{{ hospital.getDistrictId() }}</td>
-                    <td>{{ hospital.getDistrictId() }}</td>
-                    <td>{{ hospital.getDistrictId() }}</td>
+                    <td>Masih Belum Buat Fungsinya</td>
+                    <td>Masih Belum Buat Fungsinya</td>
                 </tr>
                 {% endfor %}
                 </tbody>

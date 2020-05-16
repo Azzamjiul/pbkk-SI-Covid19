@@ -181,3 +181,34 @@ CREATE TABLE fp_pbkk.dbo.hospital
     -- specify more columns here
 );
 GO
+
+-- Default value hospital
+ALTER TABLE fp_pbkk.dbo.hospital
+  ADD CONSTRAINT DF_Quota
+  DEFAULT 0 FOR quota;
+GO
+
+ALTER TABLE fp_pbkk.dbo.hospital
+  ADD CONSTRAINT DF_Filled
+  DEFAULT 0 FOR filled;
+GO
+
+ALTER TABLE fp_pbkk.dbo.hospital
+  ADD CONSTRAINT DF_Doctor
+  DEFAULT 0 FOR doctor_number;
+GO
+
+ALTER TABLE fp_pbkk.dbo.hospital
+  ADD CONSTRAINT DF_Nurse
+  DEFAULT 0 FOR nurse_number;
+GO
+
+ALTER TABLE fp_pbkk.dbo.hospital
+  ADD CONSTRAINT DF_Personnel
+  DEFAULT 0 FOR personnel_number;
+GO
+
+ALTER TABLE fp_pbkk.dbo.hospital
+  ADD CONSTRAINT DF_Queue
+  DEFAULT 0 FOR queue_status;
+GO
