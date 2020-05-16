@@ -1,4 +1,4 @@
-{% extends 'admin/layout.volt' %}
+{% extends 'hospital/layout.volt' %}
 
 {% block title %}Dashboard{% endblock %}
 
@@ -23,7 +23,7 @@
         </div>
         
         <div class="card-body">
-            <form method="POST" action="{{ url('admin/admin-rumah-sakit/add/submit') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ url('rumah-sakit/admin/add/submit') }}" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" class="form-control" placeholder="Username" name="username" required="required">
@@ -35,15 +35,6 @@
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" class="form-control" placeholder="Password" name="password" required="required">
-                </div>
-                <div class="form-group">
-                    <label>Rumah Sakit</label>
-                    <select class="custom-select" name="hospitalId" required>
-                        <option selected disabled>Pilih Rumah Sakit</option>
-                        {% for hospital in hospitals %}
-                            <option value="{{ hospital.getId() }}">{{ hospital.getName() }}</option>
-                        {% endfor %}
-                      </select>
                 </div>
                 <div class="my-2">
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -249,4 +249,32 @@ $router->addGet('/rumah-sakit', [
     'action' => 'index'
 ]);
 
+$router->addPost('/rumah-sakit/update-queue-status', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'updateHospitalQueueStatus'
+]);
+
+$router->addGet('/rumah-sakit/admin', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'admin'
+]);
+
+$router->addGet('/rumah-sakit/admin/add', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'addAdmin'
+]);
+
+$router->addPost('/rumah-sakit/admin/add/submit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'addAdminSubmit'
+]);
+
 // return $router;

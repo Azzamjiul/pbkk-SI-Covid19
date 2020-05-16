@@ -12,5 +12,5 @@ interface HospitalRepositoryInterface
 
     public function findHospital( $id ) : ?Hospital;
 
-    // public function bukaTutupAntreanHospital($id_rumah_sakit, $status);
+    public function updateHospitalQueueStatus($hospitalId, $newStatus);
 }

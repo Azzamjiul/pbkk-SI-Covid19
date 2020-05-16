@@ -83,4 +83,17 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 
 		return $hospital;
 	}
+
+	public function updateHospitalQueueStatus($hospitalId, $newStatus)
+	{
+		$sql = "UPDATE hospital SET queue_status=:newStatus WHERE id=:hospitalId";
+		$params = [
+			'hospitalId' => $hospitalId,
+			'newStatus' => $newStatus
+		];
+
+		$result = $this->db->execute($sql, $params);
+
+		return;
+	}
 }

@@ -24,7 +24,7 @@
                 Ditutup
             {% endif %}
         </h5>
-        <h4><?php echo "$mydate[weekday], $mydate[mday] $mydate[month], $mydate[year]"; ?></h4>
+        <h4><?php echo "$mydate[weekday], $mydate[mday] $mydate[month] $mydate[year]"; ?></h4>
         <br/>
         <h1>10/100</h1>
         <br/>
@@ -33,16 +33,16 @@
             <tr><a style="margin-left: 1rem;" class="btn btn-primary" href="{{url('/')}}">Next</a></tr>
         </table>
         <br/>
-        <form method="POST" action="{{ url('/bukatutupantrean/submit') }}">
+        <form method="POST" action="{{ url('/rumah-sakit/update-queue-status') }}">
             <?php
-                if(1)
+                if( !$hospital->getQueueStatus() )
                 {
-                    echo "<input type='hidden' name='status_baru' value='1'>";
+                    echo "<input type='hidden' name='newStatus' value='1'>";
                     echo "<button type='submit' class='btn btn-primary btn-submit'>Buka Antrean</button>";
                 }
                 else
                 {
-                    echo "<input type='hidden' name='status_baru' value='0'>";
+                    echo "<input type='hidden' name='newStatus' value='0'>";
                     echo "<button type='submit' class='btn btn-primary btn-submit'>Tutup Antrean</button>";
                 }
             ?>

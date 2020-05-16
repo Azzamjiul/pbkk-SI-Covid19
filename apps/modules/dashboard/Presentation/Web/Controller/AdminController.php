@@ -116,7 +116,7 @@ class AdminController extends BaseController
     {
         // Check request
 		if(!$this->request->isPost()) {
-			return $this->response->redirect('register');
+			return $this->response->redirect('admin/admin-rumah-sakit/add');
 		}
 
 		// Handle request

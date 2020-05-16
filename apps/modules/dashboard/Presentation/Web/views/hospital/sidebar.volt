@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item" id="nav-dashboard">
-    <a class="nav-link" href="{{ url('admin') }}">
+    <a class="nav-link" href="{{ url('rumah-sakit') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -28,37 +28,30 @@
     </div>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item" id="nav-pengumuman">
-    <a class="nav-link" href="{{ url('admin/pengumuman') }}">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Pengumuman</span></a>
+    <li class="nav-item" id="nav-pengantre">
+        <a class="nav-link" href="{{ url('rumah-sakit/pengantre') }}">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Pengantre</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item" id="nav-pasien">
-    <a class="nav-link" href="{{ url('admin/pasien') }}">
+    <a class="nav-link" href="{{ url('rumah-sakit/pasien') }}">
         <i class="fas fa-fw fa-table"></i>
         <span>Pasien</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item" id="nav-cek">
-    <a class="nav-link" href="{{ url('admin/cek-kesehatan') }}">
-        <i class="fas fa-fw fa-table"></i>
-        <span>Cek Kesehatan</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item" id="nav-rumahsakit">
-        <a class="nav-link" href="{{ url('admin/rumah-sakit') }}">
+    <li class="nav-item" id="nav-profil">
+        <a class="nav-link" href="{{ url('rumah-sakit/profil') }}">
             <i class="fas fa-fw fa-table"></i>
-            <span>Rumah Sakit</span>
+            <span>Profil Rumah Sakit</span>
         </a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item" id="nav-adminrumahsakit">
-        <a class="nav-link" href="{{ url('admin/admin-rumah-sakit') }}">
+        <a class="nav-link" href="{{ url('rumah-sakit/admin') }}">
             <i class="fas fa-fw fa-table"></i>
             <span>Admin Rumah Sakit</span>
         </a>

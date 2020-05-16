@@ -1,4 +1,4 @@
-{% extends 'admin/layout.volt' %}
+{% extends 'hospital/layout.volt' %}
 
 {% block title %}Dashboard{% endblock %}
 
@@ -21,7 +21,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3 d-sm-flex justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Data Admin Rumah Sakit</h6>
-            <a href="{{ url('admin/admin-rumah-sakit/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Admin Rumah Sakit</a>
+            <a href="{{ url('rumah-sakit/admin/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Admin Rumah Sakit</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -44,7 +44,7 @@
                 </tfoot>
                 <tbody>
                 {% for user in users %}
-                    {% if user.getRole() == 2 %}
+                    {% if user.getHospitalId() == this.session.auth['hospital_id'] %}
                     <tr>
                         <td>{{ user.getUsername() }}</td>
                         <td>{{ user.getEmail() }}</td>
