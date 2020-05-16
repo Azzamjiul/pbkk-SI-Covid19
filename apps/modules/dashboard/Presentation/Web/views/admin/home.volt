@@ -46,6 +46,9 @@
                     {% if user.getRole() == 1 %}
                         <td>Admin</td>
                         <td></td>
+                    {% elseif user.getRole() == 2 %}
+                    <td>Admin Rumah Sakit</td>
+                    <td></td>
                     {% else %}
                         <td>User</td>
                         <td class="align-middle text-center">

@@ -24,7 +24,8 @@ class AddUserService
 				$request->getUsername(),
 				$request->getEmail(),
 				new Password(password_hash($request->getPassword(), PASSWORD_BCRYPT)),
-				$request->getRole()
+				$request->getRole(),
+				$request->getHospitalId()
 			);
 
 			$result = $this->userRepository->addUser($user);

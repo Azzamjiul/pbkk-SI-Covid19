@@ -8,18 +8,21 @@ class AddUserRequest
 	protected string $email;
 	protected string $password;
 	protected int $role;
+	protected $hospitalId;
 
 	public function __construct(
 		string $username, 
 		string $email, 
 		string $password, 
-		int $role = 0
+		int $role = 0,
+		$hospitalId
 	)
 	{
 		$this->username = $username;
 		$this->email = $email;
 		$this->password = $password;
 		$this->role = $role;
+		$this->hospitalId = $hospitalId;
 	}
 
 	public function getUsername()
@@ -60,5 +63,15 @@ class AddUserRequest
 	public function setRole($role)
 	{
 		$this->role = $role;
+	}
+
+	public function getHospitalId()
+	{
+		return $this->hospitalId;
+	}
+
+	public function setHospitalId()
+	{
+		$this->hospitalId = $hospitalId;
 	}
 }

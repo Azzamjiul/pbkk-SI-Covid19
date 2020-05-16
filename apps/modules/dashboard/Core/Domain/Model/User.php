@@ -17,13 +17,19 @@ class User
 
 	private int $role;
 
-	public function __construct(UserId $userId, $username, $email, Password $password, $role = 0)
+	private $hospitalId;
+
+	private $queueStatus;
+
+	public function __construct(UserId $userId, $username, $email, Password $password, $role = 0, $hospitalId=NULL, $queueStatus=NULL)
 	{
 		$this->userId = $userId;
 		$this->username = $username;
 		$this->email = $email;
 		$this->password = $password;
 		$this->role = $role;
+		$this->hospitalId = $hospitalId;
+		$this->queueStatus = $queueStatus;
 	}
 
 	public function getUserId()
@@ -74,5 +80,25 @@ class User
 	public function setRole($role)
 	{
 		$this->role = $role;
-    }
+	}
+	
+	public function getHospitalId()
+	{
+		return $this->hospitalId;
+	}
+
+	public function setHospitalId($hospitalId)
+	{
+		$this->hospitalId = $hospitalId;
+	}
+
+	public function getQueueStatus()
+	{
+		return $this->queueStatus;
+	}
+
+	public function setQueueStatus($queueStatus)
+	{
+		$this->queueStatus = $queueStatus;
+	}
 }

@@ -113,11 +113,14 @@ class AuthController extends BaseController
 				'id' => $user->getUserId()->id(),
 				'username' => $user->getUsername(),
 				'email' => $user->getEmail(),
-				'role' => $user->getRole()
+				'role' => $user->getRole(),
+				'hospital_id' => $user->getHospitalId(),
+				'queue_status' => $user->getQueueStatus()
 			));
 
 			$this->response->redirect('/');
 			$this->view->disable();
+			var_dump($this->session->auth);
 		} catch (\Exception $e) {
 			$this->flashSession->error("Invalid Username / Password");
 			return $this->response->redirect('login');

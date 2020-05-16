@@ -21,13 +21,14 @@ class SqlServerUserRepository implements UserRepositoryInterface
 
 	public function addUser(User $user)
 	{
-		$sql = "INSERT INTO users (user_id, username, email, password, [role]) VALUES(:user_id, :username, :email, :password, :role)";
+		$sql = "INSERT INTO users (user_id, username, email, password, [role], hospital_id) VALUES(:user_id, :username, :email, :password, :role, :hospital_id)";
 		$params = [
 			'user_id' => $user->getUserId()->id(),
 			'username' => $user->getUsername(),
 			'email' => $user->getEmail(),
 			'password' => $user->getPassword()->toString(),
-			'role' => $user->getRole()
+			'role' => $user->getRole(),
+			'hospital_id' => $user->getHospitalId()
 		];
 
 		$result = $this->db->execute($sql, $params);
@@ -49,7 +50,9 @@ class SqlServerUserRepository implements UserRepositoryInterface
 				$result['username'],
 				$result['email'],
 				$password,
-				$result['role']
+				$result['role'],
+				$result['hospital_id'],
+				$result['queue_status']
 			);
 
 			return $user;
@@ -72,7 +75,9 @@ class SqlServerUserRepository implements UserRepositoryInterface
 					$result['username'],
 					$result['email'],
 					new Password($result['password']),
-					$result['role']
+					$result['role'],
+					$result['hospital_id'],
+					$result['queue_status'],
 				);
 
 				array_push($users, $user);
@@ -99,7 +104,9 @@ class SqlServerUserRepository implements UserRepositoryInterface
 				$result['username'],
 				$result['email'],
 				new Password($result['password']),
-				$result['role']
+				$result['role'],
+				$result['hospital_id'],
+				$result['queue_status']
 			);
 
 			// Check password from input
