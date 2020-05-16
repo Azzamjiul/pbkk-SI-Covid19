@@ -25,14 +25,18 @@ use KCV\Dashboard\Core\Application\Service\GetRegencies\GetRegenciesService;
 use KCV\Dashboard\Core\Application\Service\LoginUser\LoginUserService;
 
 use KCV\Dashboard\Core\Application\Service\GetAllHospital\GetAllHospitalService;
+use KCV\Dashboard\Core\Application\Service\AddHospital\AddHospitalService;
 
-//=================
-//-----User Usecase
-//=================
+//=====================
+//-----Hospital Usecase
+//=====================
 $di->set('getAllHospitalService', function() use ($di) {
     return new GetAllHospitalService($di->get('sqlServerHospitalRepository'));
 });
 
+$di->set('addHospitalService', function() use ($di) {
+    return new AddHospitalService($di->get('sqlServerHospitalRepository'));
+});
 
 //=================
 //-----User Usecase

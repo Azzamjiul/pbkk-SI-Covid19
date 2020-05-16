@@ -204,4 +204,17 @@ $router->addGet('/admin/rumah-sakit', [
     'action' => 'index'
 ]);
 
+$router->addGet('/admin/rumah-sakit/add', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospital',
+    'action' => 'add'
+]);
+
+$router->addPost('/admin/rumah-sakit/add/submit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospital',
+    'action' => 'addSubmit'
+]);
 // return $router;

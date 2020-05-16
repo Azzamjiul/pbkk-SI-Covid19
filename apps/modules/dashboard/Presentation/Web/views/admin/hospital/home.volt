@@ -65,7 +65,7 @@
                     <td>{{ hospital.getDistrictId() }}</td>
                     <td>{{ hospital.getDistrictId() }}</td>
                 </tr>
-                <!-- {% endfor %} -->
+                {% endfor %}
                 </tbody>
             </table>
         </div>

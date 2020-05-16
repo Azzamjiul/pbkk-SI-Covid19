@@ -8,7 +8,7 @@ interface HospitalRepositoryInterface
 {
     public function getAllHospital() : ?array;
 
-    // public function addHospital( Hospital $rumah_sakit );
+    public function addHospital( Hospital $hospital );
 
     // public function findHospital( $id_rumah_sakit ) : ?Hospital;
 

@@ -26,7 +26,6 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 				$hospital = new Hospital(
 					$result['name'],
 					$result['address'],
-					$result['id'],
                     $result['district_id'],
 					$result['quota'],
 					$result['filled'],
@@ -34,6 +33,7 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 					$result['nurse_number'],
 					$result['personnel_number'],
 					$result['queue_status'],
+					$result['id'],
 				);
 
 				array_push($all_hospital, $hospital);
@@ -41,5 +41,20 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 		}
 
 		return $all_hospital;
-    }
+	}
+	
+	public function addHospital( Hospital $hospital )
+    {
+        $sql = "INSERT INTO HOSPITAL (name, address, district_id) VALUES (:name, :address, :districtId)";
+
+        $params = [
+			'name' => $hospital->getName(),
+			'address' => $hospital->getAddress(),
+			'districtId' => $hospital->getDistrictId()
+        ];
+        
+        $result = $this->db->execute($sql, $params);
+
+		return $result;
+	}
 }

@@ -27,14 +27,14 @@ class Hospital
     public function __construct(
 		$name, 
 		$address, 
-		$id = NULL, 
 		$district_id = NULL, 
 		$quota = NULL, 
 		$filled = NULL, 
 		$doctor_number = NULL,
 		$nurse_number = NULL, 
 		$personnel_number = NULL,
-		$queue_status = 0
+		$queue_status = 0,
+		$id = NULL
 		)
 	{
 		$this->id = $id;
