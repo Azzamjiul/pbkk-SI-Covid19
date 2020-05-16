@@ -99,6 +99,17 @@ class BaseController extends Controller
 		}
 	}
 
+	public function hasHospitalPrivilege()
+	{
+		if($this->isLoggedIn()) {
+			$auth = $this->session->get('auth');
+
+			if($auth['role'] != 2) {
+				$this->response->redirect('/');
+			}
+		}
+	}
+
 	private function isLoggedIn()
 	{
 		if($this->session->has('auth')) {

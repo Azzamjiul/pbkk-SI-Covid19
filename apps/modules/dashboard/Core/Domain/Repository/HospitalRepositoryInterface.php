@@ -10,7 +10,7 @@ interface HospitalRepositoryInterface
 
     public function addHospital( Hospital $hospital );
 
-    // public function findHospital( $id_rumah_sakit ) : ?Hospital;
+    public function findHospital( $id ) : ?Hospital;
 
     // public function bukaTutupAntreanHospital($id_rumah_sakit, $status);
 }

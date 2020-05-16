@@ -26,6 +26,9 @@ use KCV\Dashboard\Core\Application\Service\LoginUser\LoginUserService;
 
 use KCV\Dashboard\Core\Application\Service\GetAllHospital\GetAllHospitalService;
 use KCV\Dashboard\Core\Application\Service\AddHospital\AddHospitalService;
+use KCV\Dashboard\Core\Application\Service\FindHospital\FindHospitalService;
+use KCV\Dashboard\Core\Application\Service\UpdateHospitalQueueStatus\UpdateHospitalQueueStatusService;
+
 
 //=====================
 //-----Hospital Usecase
@@ -36,6 +39,14 @@ $di->set('getAllHospitalService', function() use ($di) {
 
 $di->set('addHospitalService', function() use ($di) {
     return new AddHospitalService($di->get('sqlServerHospitalRepository'));
+});
+
+$di->set('findHospitalService', function() use ($di) {
+    return new FindHospitalService($di->get('sqlServerHospitalRepository'));
+});
+
+$di->set('updateHospitalQueueStatusService', function() use ($di) {
+    return new updateHospitalQueueStatusService($di->get('sqlServerHospitalRepository'));
 });
 
 //=================

@@ -218,28 +218,35 @@ $router->addPost('/admin/rumah-sakit/add/submit', [
     'action' => 'addSubmit'
 ]);
 
-//================
-//-----Rumah Sakit
-//================
+//======================
+//-----Admin Rumah Sakit
+//======================
 $router->addGet('/admin/admin-rumah-sakit', [
     'namespace' => $namespace,
     'module' => 'dashboard',
-    'controller' => 'hospitalAdmin',
-    'action' => 'index'
+    'controller' => 'admin',
+    'action' => 'hospitalAdmin'
 ]);
 
 $router->addGet('/admin/admin-rumah-sakit/add', [
     'namespace' => $namespace,
     'module' => 'dashboard',
-    'controller' => 'hospitalAdmin',
-    'action' => 'add'
+    'controller' => 'admin',
+    'action' => 'addHospitalAdmin'
 ]);
 
 $router->addPost('/admin/admin-rumah-sakit/add/submit', [
     'namespace' => $namespace,
     'module' => 'dashboard',
+    'controller' => 'admin',
+    'action' => 'addHospitalAdminSubmit'
+]);
+
+$router->addGet('/rumah-sakit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
     'controller' => 'hospitalAdmin',
-    'action' => 'addSubmit'
+    'action' => 'index'
 ]);
 
 // return $router;

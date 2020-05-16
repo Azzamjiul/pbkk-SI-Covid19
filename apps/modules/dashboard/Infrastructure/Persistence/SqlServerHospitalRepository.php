@@ -57,4 +57,30 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 
 		return $result;
 	}
+
+	public function findHospital( $id ) : ?Hospital
+	{
+		$sql = "SELECT * FROM HOSPITAL WHERE id = :id";
+		$params = [
+			'id' => $id
+        ];
+        $result = $this->db->fetchOne($sql, \Phalcon\Db\Enum::FETCH_ASSOC, $params);
+        
+		if($result) {
+			$hospital = new Hospital(
+				$result['name'],
+				$result['address'],
+				$result['district_id'],
+				$result['quota'],
+				$result['filled'],
+				$result['doctor_number'],
+				$result['nurse_number'],
+				$result['personnel_number'],
+				$result['queue_status'],
+				$result['id']
+			);
+		}
+
+		return $hospital;
+	}
 }

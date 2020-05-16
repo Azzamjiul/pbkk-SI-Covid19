@@ -2,85 +2,62 @@
 
 namespace KCV\Dashboard\Presentation\Web\Controller;
 
-use KCV\Dashboard\Core\Application\Service\GetAllUser\GetAllUserService;
-use KCV\Dashboard\Core\Application\Service\GetAllHospital\GetAllHospitalService;
-use KCV\Dashboard\Core\Application\Service\AddUser\AddUserRequest;
-use KCV\Dashboard\Core\Application\Service\AddUser\AddUserService;
-use Phalcon\Http\Request;
-use Phalcon\Security;
-
+use KCV\Dashboard\Core\Application\Service\FindHospital\FindHospitalService;
+// use KCV\Dashboard\Core\Application\Service\UpdateHospitalQueueStatus\UpdateHospitalQueueStatusService;
 
 class HospitalAdminController extends BaseController
 {
     /**
-	 * @var GetAllUserService
+	 * @var FindHospitalService
 	 */
-    protected $getAllUserService;
-    
+    protected $findHospitalService;
+
     /**
-	 * @var GetAllHospitalService
+	 * @var UpdateHospitalQueueStatusService
 	 */
-    protected $getAllHospitalService;
-    
-    /**
-	 * @var AddUserService
-	 */
-	protected $addUserService;
+    // protected $updateHospitalQueueStatusService;
 
 	public function initialize()
 	{
-        $this->authorized();
-        $this->hasAdminPrivilege();
+		$this->authorized();
+        $this->hasHospitalPrivilege();
         
-        $this->getAllUserService = $this->getDI()->get('getAllUserService');
-        $this->getAllHospitalService = $this->getDI()->get('getAllHospitalService');
-		$this->addUserService = $this->getDI()->get('addUserService');
-    }
-    
-    public function indexAction()
-    {
-        $users = $this->getAllUserService->execute();
+        $this->findHospitalService = $this->getDI()->get('findHospitalService');
+        // $this->updateHospitalQueueStatusService = $this->getDI()->get('updateHospitalQueueStatusService');
+	}
 
-		$this->view->setVar('users', $users);
-		$this->view->pick('admin/adminHospital/home');
-    }
-
-    public function addAction()
+	public function indexAction()
 	{
-        $hospitals = $this->getAllHospitalService->execute();		
-		$this->view->setVar('hospitals', $hospitals);
+        try {
+            $hospital = $this->findHospitalService->execute($this->session->auth['hospital_id']);
+        } catch(\Exception $e) {
+            throw $e->getMessage();
+        }
 
-		$this->view->pick('admin/adminHospital/add');
+        $mydate=getdate(date("U"));
+
+        $this->view->setVar('hospital', $hospital);
+        $this->view->setVar('mydate', $mydate);
+        
+		$this->view->pick('hospital/home');
     }
     
-    public function addSubmitAction()
+    public function updateHospitalQueueStatusAction()
     {
         // Check request
 		if(!$this->request->isPost()) {
-			return $this->response->redirect('register');
-		}
+			return $this->response->redirect('hospital');
+        }
 
-		// Handle request
-		$username = $this->request->getPost('username');
-		$email = $this->request->getPost('email');
-		$password = $this->request->getPost('password');
-        $hospitalId = $this->request->getPost('hospitalId');
-        $role = 2;
+        $newStatus = $this->request->getPost('newStatus');
+        $hospitalId = $this->session->auth['hospitalId'];
 
-		if($username == '' || $email == '' || $password == '' || $hospitalId =='') {
-			$this->flashSession->error("Please fulfill with a valid form");
-			return $this->response->redirect('admin/admin-rumah-sakit/add');
-		}
-
-		// Add new User
-		$request = new AddUserRequest($username, $email, $password, $role, $hospitalId);
 		try {
-			$this->addUserService->execute($request);
-			$this->flashSession->success('Admin Rumah Sakit Telah Berhasil Ditambahkan');
-			return $this->response->redirect('admin/admin-rumah-sakit');
+			$this->updateHospitalQueueStatusService->execute($hospitalId, $newStatus);
+			$this->flashSession->success('Status Antrean Berhasil Diubah');
+			return $this->response->redirect('hospital');
 		} catch (\Exception $e) {
-			$this->flashSession->error('Email / Username telah digunakan!');
-			return $this->response->redirect('admin/admin-rumah-sakit/add');
+			return $this->response->redirect('hospital');
 		}
     }
 }

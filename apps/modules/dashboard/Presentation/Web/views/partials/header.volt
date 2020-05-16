@@ -47,6 +47,10 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{{ url('/admin') }}"><b>ADMIN</b></a>
 				</li>
+				{% elseif auth['role'] == 2 %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url('/rumah-sakit') }}"><b>RUMAH SAKIT</b></a>
+				</li>
 				{% endif %}
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i><b> {{ auth['username'] }}</b></a>
