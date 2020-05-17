@@ -31,7 +31,8 @@ class EditPasienService
 				$request->getRiwayatPenyakit(),
 				$request->getAlergi(),
 				$request->getStatusId(),
-				$this->generateTimestamp()
+				$this->generateTimestamp(),
+				$request->getHospitalId()
 			);
 
 			$this->repository->editPasien($pasien);

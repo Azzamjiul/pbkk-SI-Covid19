@@ -31,7 +31,8 @@ class AddPasienService
 				$request->getRiwayatPenyakit(),
 				$request->getAlergi(),
 				$request->getStatusId(),
-				$this->generateTimestamp()
+				$this->generateTimestamp(),
+				$request->getHospitalId()
 			);
 
 			$result = $this->repository->addPasien($pasien);

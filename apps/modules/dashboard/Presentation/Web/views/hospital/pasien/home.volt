@@ -1,4 +1,4 @@
-{% extends 'admin/layout.volt' %}
+{% extends 'hospital/layout.volt' %}
 
 {% block title %}Pasien{% endblock %}
 
@@ -21,7 +21,7 @@
 <div class="card shadow mb-4">
 <div class="card-header py-3 d-sm-flex justify-content-between">
     <h6 class="m-0 font-weight-bold text-primary">Data Pasien</h6>
-        <a href="{{ url('admin/pasien/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Pasien</a>
+        <a href="{{ url('rumah-sakit/pasien/add') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus-square fa-sm text-white-50"></i> Tambahkan Pasien</a>
 </div>
 
 <div class="card-body">
@@ -51,6 +51,7 @@
         </tfoot>
         <tbody>
         {% for pasien in pasiens %}
+        {% if pasien.getHospitalId()==hospital_id %}
         <tr>
             <td class="align-middle text-center">
                 <a href="{{ url('/admin/pasien/' ~ pasien.getId().id() ~ '/edit') }}"><button class="btn btn-warning btn-icon-split btn-sm" style="margin-bottom: 6px;">
@@ -78,6 +79,7 @@
                 <input type="hidden" name="id" id="idPasien">
             </form> 
         </tr>
+        {% endif %}
         {% endfor %}
         </tbody>
     </table>

@@ -26,6 +26,8 @@ class AddPasienRequest
 
 	private string $statusId;
 
+	private $hospital_id;
+
 	public function __construct(
 		string $namaLengkap,
 		string $districtId,
@@ -37,7 +39,8 @@ class AddPasienRequest
 		string $jenisPenyakit,
 		?string $riwayatPenyakit,
 		?string $alergi,
-		string $statusId)
+		string $statusId,
+		?int $hospital_id)
 	{
 		$this->namaLengkap = $namaLengkap;
 		$this->districtId = $districtId;
@@ -50,6 +53,7 @@ class AddPasienRequest
 		$this->riwayatPenyakit = $riwayatPenyakit;
 		$this->alergi = $alergi;
 		$this->statusId = $statusId;
+		$this->hospital_id = $hospital_id;
 	}
 
 	public function getNamaLengkap()
@@ -107,4 +111,8 @@ class AddPasienRequest
 		return $this->statusId;
 	}
 
+	public function getHospitalId()
+	{
+		return $this->hospital_id;
+	}
 }

@@ -1,4 +1,4 @@
-{% extends 'admin/layout.volt' %}
+{% extends 'hospital/layout.volt' %}
 
 {% block title %}Dashboard{% endblock %}
 
@@ -23,7 +23,7 @@
         </div>
 
         <div class="card-body">
-            <form method="POST" action="{{ url('admin/pasien/add/submit') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ url('rumah-sakit/pasien/add/submit') }}" enctype="multipart/form-data">
                 <div class="form-group row">
                     <label for="title" class="col-sm-2 col-form-label text-lg">Nama Lengkap</label>
                     <div class="col-sm-10">

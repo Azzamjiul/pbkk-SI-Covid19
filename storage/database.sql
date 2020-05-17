@@ -138,7 +138,8 @@ CREATE TABLE TestDB.dbo.pasiens
     riwayat_penyakit [VARCHAR](255),
     alergi [VARCHAR](100),
     status_id [VARCHAR](36) NOT NULL,
-    [timestamp] DATETIME
+    [timestamp] DATETIME,
+    hospital_id INT
     -- specify more columns here
 );
 GO

@@ -22,7 +22,7 @@ class SqlServerPasienRepository implements PasienRepositoryInterface
 
 	public function addPasien(Pasien $pasien)
 	{
-		$sql = "INSERT INTO pasiens (id, nama_lengkap, district_id, alamat, jenis_kelamin, tinggi_badan, berat_badan, tekanan_darah, jenis_penyakit, riwayat_penyakit, alergi, status_id, [timestamp]) VALUES(:id, :nama_lengkap, :district_id, :alamat, :jenis_kelamin, :tinggi_badan, :berat_badan, :tekanan_darah, :jenis_penyakit, :riwayat_penyakit, :alergi, :status_id, :timestamp)";
+		$sql = "INSERT INTO pasiens (id, nama_lengkap, district_id, alamat, jenis_kelamin, tinggi_badan, berat_badan, tekanan_darah, jenis_penyakit, riwayat_penyakit, alergi, status_id, [timestamp], hospital_id) VALUES(:id, :nama_lengkap, :district_id, :alamat, :jenis_kelamin, :tinggi_badan, :berat_badan, :tekanan_darah, :jenis_penyakit, :riwayat_penyakit, :alergi, :status_id, :timestamp, :hospital_id)";
 		$params = [
 			'id' => $pasien->getId()->id(),
 			'nama_lengkap' => $pasien->getNamaLengkap(),
@@ -36,7 +36,8 @@ class SqlServerPasienRepository implements PasienRepositoryInterface
 			'riwayat_penyakit' => $pasien->getRiwayatPenyakit(),
 			'alergi' => $pasien->getAlergi(),
 			'status_id' => $pasien->getStatusId(),
-			'timestamp' => $pasien->getTimestamp()
+			'timestamp' => $pasien->getTimestamp(),
+			'hospital_id' => $pasien->getHospitalId()
 		];
 
 		$result = $this->db->execute($sql, $params);
@@ -75,7 +76,8 @@ class SqlServerPasienRepository implements PasienRepositoryInterface
 					$result['riwayat_penyakit'],
 					$result['alergi'],
 					$result['status_id'],
-					$result['timestamp']
+					$result['timestamp'],
+					$result['hospital_id']
 				);
 
 				$pasien->setNamaStatus($result['nama_status']);
@@ -123,7 +125,8 @@ class SqlServerPasienRepository implements PasienRepositoryInterface
 				$result['riwayat_penyakit'],
 				$result['alergi'],
 				$result['status_id'],
-				$result['timestamp']
+				$result['timestamp'],
+				$result['hospital_id']
 			);
 
 			$pasien->setNamaStatus($result['nama_status']);
@@ -151,7 +154,8 @@ class SqlServerPasienRepository implements PasienRepositoryInterface
 			riwayat_penyakit=:riwayat_penyakit, 
 			alergi=:alergi, 
 			status_id=:status_id, 
-			timestamp=:timestamp 
+			timestamp=:timestamp,
+			hospital_id=:hospital-id
 		WHERE id=:id";
 		
 		$params = [
@@ -167,7 +171,8 @@ class SqlServerPasienRepository implements PasienRepositoryInterface
 			'alergi' => $pasien->getAlergi(),
 			'status_id' => $pasien->getStatusId(),
 			'timestamp' => $pasien->getTimestamp(),
-			'id' => $pasien->getId()->id()
+			'id' => $pasien->getId()->id(),
+			'hospital_id' => $pasien->getHospitalId()
 		];
 
 		$result = $this->db->execute($sql, $params);

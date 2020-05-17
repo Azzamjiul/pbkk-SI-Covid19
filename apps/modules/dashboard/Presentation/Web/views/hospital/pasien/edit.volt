@@ -1,4 +1,4 @@
-{% extends 'admin/layout.volt' %}
+{% extends 'hospital/layout.volt' %}
 
 {% block title %}Dashboard{% endblock %}
 

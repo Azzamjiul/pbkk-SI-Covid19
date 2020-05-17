@@ -30,6 +30,8 @@ class Pasien
 
 	private $timestamp;
 
+	private ?int $hospital_id;
+
 	private string $namaStatus;
 
 	private string $namaKecamatan;
@@ -51,7 +53,8 @@ class Pasien
 		?string $riwayatPenyakit,
 		?string $alergi,
 		string $statusId,
-		$timestamp)
+		$timestamp,
+		?int $hospital_id)
 	{
 		$this->id = $id;
 		$this->namaLengkap = $namaLengkap;
@@ -66,6 +69,7 @@ class Pasien
 		$this->alergi = $alergi;
 		$this->statusId = $statusId;
 		$this->timestamp = $timestamp;
+		$this->hospital_id = $hospital_id;
 	}
 
 	public function getId()
@@ -231,5 +235,15 @@ class Pasien
 	public function setNamaProvinsi($namaProvinsi)
 	{
 		$this->namaProvinsi = $namaProvinsi;
+	}
+
+	public function getHospitalId()
+	{
+		return $this->hospital_id;
+	}
+
+	public function setHospitalId($hospital_id)
+	{
+		$this->hospital_id = $hospital_id;
 	}
 }

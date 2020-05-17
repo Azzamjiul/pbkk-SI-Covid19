@@ -30,6 +30,8 @@ class EditPasienRequest
 
 	private $timestamp;
 
+	private $hospital_id;
+
 	public function __construct(
 		$id,
 		string $namaLengkap,
@@ -42,7 +44,8 @@ class EditPasienRequest
 		string $jenisPenyakit,
 		?string $riwayatPenyakit,
 		?string $alergi,
-		string $statusId)
+		string $statusId,
+		$hospital_id=NULL)
 	{
 		$this->id = $id;
 		$this->namaLengkap = $namaLengkap;
@@ -56,6 +59,7 @@ class EditPasienRequest
 		$this->riwayatPenyakit = $riwayatPenyakit;
 		$this->alergi = $alergi;
 		$this->statusId = $statusId;
+		$this->hospital_id = $hospital_id;
 	}
 
 	public function getId()
@@ -116,5 +120,10 @@ class EditPasienRequest
 	public function getStatusId()
 	{
 		return $this->statusId;
+	}
+
+	public function getHospitalId()
+	{
+		return $this->hospital_id;
 	}
 }
