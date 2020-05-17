@@ -135,7 +135,7 @@ CREATE TABLE TestDB.dbo.pasiens
     berat_badan INT NOT NULL,
     tekanan_darah [VARCHAR](32) NOT NULL,
     jenis_penyakit [VARCHAR](100) NOT NULL,
-    riwayat_perjalanan [VARCHAR](255),
+    riwayat_penyakit [VARCHAR](255),
     alergi [VARCHAR](100),
     status_id [VARCHAR](36) NOT NULL,
     [timestamp] DATETIME
