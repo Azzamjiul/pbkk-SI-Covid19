@@ -10,6 +10,10 @@
 			<li class="nav-item active">
 				<a class="nav-link" href="{{ url('/') }}"><b>BERANDA</b></a>
 			</li>
+
+			<li class="nav item">
+				<a class="nav-link" href="{{ url('/antre') }}"><b>ANTRE</b></a>
+			</li>
 			
 			{% if cek is defined %}
 			<li class="nav-item"  data-toggle="modal" data-target="#modal-cek">

@@ -46,7 +46,7 @@ $di->set('findHospitalService', function() use ($di) {
 });
 
 $di->set('updateHospitalQueueStatusService', function() use ($di) {
-    return new updateHospitalQueueStatusService($di->get('sqlServerHospitalRepository'));
+    return new UpdateHospitalQueueStatusService($di->get('sqlServerHospitalRepository'));
 });
 
 //=================

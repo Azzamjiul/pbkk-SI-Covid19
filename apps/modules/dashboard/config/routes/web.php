@@ -277,4 +277,14 @@ $router->addPost('/rumah-sakit/admin/add/submit', [
     'action' => 'addAdminSubmit'
 ]);
 
+//=================
+//-----Antrean User
+//=================
+$router->addGet('/antre', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'userQueue',
+    'action' => 'index'
+]);
+
 // return $router;

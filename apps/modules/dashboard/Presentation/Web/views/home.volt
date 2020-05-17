@@ -51,6 +51,8 @@
     <h3> SISTEM INFORMASI COVID-19 (Beta version) </h3>
 </div>
 
+{% if auth is defined %}
+{% if auth['queue_status'] == 1 %}
 <div class="row justify-content-center mb-4">
   <div class="col-4 col-sm-4 kartu kartu-merah">
       <h5 class="text-center">ANTREAN</h5>
@@ -74,6 +76,8 @@
       </table>
   </div>
 </div>
+{% endif %}
+{% endif %}
 
 <div class="row justify-content-center mb-3">
     <div class="col-3 col-sm-3 kartu kartu-ungu text-center">
