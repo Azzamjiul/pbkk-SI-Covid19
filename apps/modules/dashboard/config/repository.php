@@ -10,6 +10,11 @@ use KCV\Dashboard\Infrastructure\Persistence\SqlServerStatusCovid19Repository;
 use KCV\Dashboard\Infrastructure\Persistence\SqlServerUserInfoRepository;
 use KCV\Dashboard\Infrastructure\Persistence\SqlServerUserRepository;
 use KCV\Dashboard\Infrastructure\Persistence\SqlServerHospitalRepository;
+use KCV\Dashboard\Infrastructure\Persistence\SqlServerQueueRepository;
+
+$di->set('sqlServerQueueRepository', function() use ($di) {
+    return new SqlServerQueueRepository($di->get('db'));
+});
 
 $di->set('sqlServerHospitalRepository', function() use ($di) {
     return new SqlServerHospitalRepository($di->get('db'));

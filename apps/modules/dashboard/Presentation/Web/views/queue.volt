@@ -75,6 +75,50 @@
   </div>
 </div>
 
+<div class="card shadow mb-4">
+  <div class="card-header py-3 d-sm-flex justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">List Rumah Sakit</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+              <th>Nama Rumah Sakit</th>
+              <th>Alamat</th>
+              <th>Kecamatan</th>
+              <th>Kota/Kabupaten</th>
+              <th>Provinsi</th>
+              <th>Action</th>
+          </tr>
+          </thead>
+          <tfoot>
+          <tr>
+              <th>Nama Rumah Sakit</th>
+              <th>Alamat</th>
+              <th>Kecamatan</th>
+              <th>Kota/Kabupaten</th>
+              <th>Provinsi</th>
+              <th>Action</th>
+          </tr>
+          </tfoot>
+          <tbody>
+          {% for hospital in hospitals %}
+          <tr>
+              <td>{{ hospital.getName() }}</td>
+              <td>{{ hospital.getAddress() }}</td>
+              <td>{{ hospital.getDistrictId() }}</td>
+              <td>Masih Belum Buat Fungsinya</td>
+              <td>Masih Belum Buat Fungsinya</td>
+              <td><form method='POST' action='/antre/get'><input name='hospital_id' type='hidden' value={{ hospital.getId() }}><button class='btn btn-primary btn-submit' type='submit'>Antre</button></form></td>
+          </tr>
+          {% endfor %}
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 
 {% block scripts %}

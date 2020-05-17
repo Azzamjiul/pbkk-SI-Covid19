@@ -287,4 +287,11 @@ $router->addGet('/antre', [
     'action' => 'index'
 ]);
 
+$router->addPost('/antre/get', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'userQueue',
+    'action' => 'getQueue'
+]);
+
 // return $router;

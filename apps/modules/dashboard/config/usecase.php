@@ -29,6 +29,14 @@ use KCV\Dashboard\Core\Application\Service\AddHospital\AddHospitalService;
 use KCV\Dashboard\Core\Application\Service\FindHospital\FindHospitalService;
 use KCV\Dashboard\Core\Application\Service\UpdateHospitalQueueStatus\UpdateHospitalQueueStatusService;
 
+use KCV\Dashboard\Core\Application\Service\AddQueue\AddQueueService;
+
+//==================
+//-----Queue Usecase
+//==================
+$di->set('addQueueService', function() use ($di) {
+    return new AddQueueService($di->get('sqlServerQueueRepository'));
+});
 
 //=====================
 //-----Hospital Usecase
