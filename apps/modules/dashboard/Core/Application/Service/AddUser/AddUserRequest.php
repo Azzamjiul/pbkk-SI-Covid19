@@ -15,7 +15,7 @@ class AddUserRequest
 		string $email, 
 		string $password, 
 		int $role = 0,
-		$hospitalId
+		$hospitalId = NULL
 	)
 	{
 		$this->username = $username;

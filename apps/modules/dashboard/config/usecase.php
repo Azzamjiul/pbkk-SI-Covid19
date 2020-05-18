@@ -29,6 +29,7 @@ use KCV\Dashboard\Core\Application\Service\AddHospital\AddHospitalService;
 use KCV\Dashboard\Core\Application\Service\AddPoster\AddPosterService;
 use KCV\Dashboard\Core\Application\Service\FindHospital\FindHospitalService;
 use KCV\Dashboard\Core\Application\Service\UpdateHospitalQueueStatus\UpdateHospitalQueueStatusService;
+use KCV\Dashboard\Core\Application\Service\EditHospital\EditHospitalService;
 
 use KCV\Dashboard\Core\Application\Service\AddQueue\AddQueueService;
 use KCV\Dashboard\Core\Application\Service\EditPoster\EditPosterService;
@@ -63,6 +64,10 @@ $di->set('findHospitalService', function() use ($di) {
 
 $di->set('updateHospitalQueueStatusService', function() use ($di) {
     return new UpdateHospitalQueueStatusService($di->get('sqlServerHospitalRepository'));
+});
+
+$di->set('editHospitalService', function() use ($di) {
+    return new EditHospitalService($di->get('sqlServerHospitalRepository'));
 });
 
 //=================

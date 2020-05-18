@@ -340,6 +340,13 @@ $router->addGet('/rumah-sakit/profil', [
     'action' => 'hospitalProfile'
 ]);
 
+$router->addPost('/rumah-sakit/profil/submit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'hospitalProfileSubmit'
+]);
+
 // Antrean
 $router->addGet('/rumah-sakit/pengantre', [
     'namespace' => $namespace,

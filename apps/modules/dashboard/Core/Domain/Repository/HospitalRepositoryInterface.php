@@ -13,4 +13,6 @@ interface HospitalRepositoryInterface
     public function findHospital( $id ) : ?Hospital;
 
     public function updateHospitalQueueStatus($hospitalId, $newStatus);
+
+    public function editHospital( Hospital $hospital);
 }
