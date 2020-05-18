@@ -17,6 +17,8 @@ use KCV\Dashboard\Core\Application\Service\EditPasien\EditPasienService;
 use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdRequest;
 use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdService;
 use KCV\Dashboard\Core\Application\Service\GetAllQueue\GetAllQueueService;
+use KCV\Dashboard\Core\Application\Service\EditHospital\EditHospitalService;
+use KCV\Dashboard\Core\Application\Service\EditHospital\EditHospitalRequest;
 use Phalcon\Http\Request;
 use Phalcon\Security;
 
@@ -72,6 +74,11 @@ class HospitalAdminController extends BaseController
 	 */
 	protected $getAllQueueService;
 
+	/**
+	 * @var EditHospitalService
+	 */
+	protected $editHospitalService;
+
 	public function initialize()
 	{
 		$this->authorized();
@@ -87,6 +94,7 @@ class HospitalAdminController extends BaseController
 		$this->findPasienByIdService = $this->getDI()->get('findPasienByIdService');
 		$this->editPasienService = $this->getDI()->get('editPasienService');
 		$this->getAllQueueService = $this->getDI()->get('getAllQueueService');
+		$this->editHospitalService = $this->getDI()->get('editHospitalService');
 	}
 
 	public function indexAction()
@@ -314,6 +322,8 @@ class HospitalAdminController extends BaseController
 
 	public function hospitalProfileAction()
 	{
+		$this->setProvinceView();
+
 		try {
             $hospital = $this->findHospitalService->execute($this->session->auth['hospital_id']);
         } catch(\Exception $e) {
@@ -323,5 +333,45 @@ class HospitalAdminController extends BaseController
         $this->view->setVar('hospital', $hospital);
 
 		$this->view->pick('hospital/profile/home');
+	}
+
+	public function hospitalProfileSubmitAction()
+	{
+		// Check request
+		if(!$this->request->isPost()) {
+			return $this->response->redirect('rumah-sakit/profil');
+		}
+
+		$name = $this->request->getPost('name');
+		$district_id = $this->request->getPost('district_id');
+		$address = $this->request->getPost('address');
+		$quota = $this->request->getPost('quota');
+		$filled = $this->request->getPost('filled');
+		$doctor_number = $this->request->getPost('doctor_number');
+		$nurse_number = $this->request->getPost('nurse_number');
+		$personnel_number = $this->request->getPost('personnel_number');
+		$hospital_id = $this->session->auth['hospital_id'];
+
+		// TODO: add handler
+		try {
+			$request = new EditHospitalRequest(
+				$name,
+				$district_id,
+				$address,
+				$quota,
+				$filled,
+				$doctor_number,
+				$nurse_number,
+				$personnel_number,
+				$hospital_id
+			);
+
+			$this->editHospitalService->execute($request);
+
+			$this->flashSession->success('Edit data rumah sakit berhasil');
+			$this->response->redirect('rumah-sakit/profil');
+		} catch(\Phalcon\Exception $e) {
+			throw $e;
+		}
 	}
 }

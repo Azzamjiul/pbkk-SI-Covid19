@@ -60,7 +60,15 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 
 	public function findHospital( $id ) : ?Hospital
 	{
-		$sql = "SELECT * FROM HOSPITAL WHERE id = :id";
+		$sql = "SELECT hospital.*,
+		districts.name as nama_kecamatan,
+		regencies.name as nama_kabupaten,
+		provinces.name as nama_provinsi
+		FROM hospital
+		LEFT JOIN districts ON hospital.district_id = districts.id 
+		LEFT JOIN regencies ON districts.regency_id = regencies.id
+		LEFT JOIN provinces ON provinces.id = regencies.province_id 
+		WHERE hospital.id = :id";
 		$params = [
 			'id' => $id
         ];
@@ -79,9 +87,17 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 				$result['queue_status'],
 				$result['id']
 			);
+
+			$hospital->setNamaKecamatan($result['nama_kecamatan']);
+			$hospital->setNamaKabupaten($result['nama_kabupaten']);
+			$hospital->setNamaProvinsi($result['nama_provinsi']);
+
+			return $hospital;
+
 		}
 
-		return $hospital;
+		return null;
+
 	}
 
 	public function updateHospitalQueueStatus($hospitalId, $newStatus)
@@ -96,4 +112,35 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 
 		return;
 	}
+
+	public function editHospital( Hospital $hospital)
+	{
+		$sql = "UPDATE hospital SET 
+			name=:name, 
+			district_id=:district_id, 
+			address=:address, 
+			quota=:quota, 
+			filled=:filled, 
+			doctor_number=:doctor_number, 
+			nurse_number=:nurse_number, 
+			personnel_number=:personnel_number
+		WHERE id=:id";
+		
+		$params = [
+			'name' => $hospital->getName(),
+			'district_id' => $hospital->getDistrictId(),
+			'address' => $hospital->getAddress(),
+			'quota' => $hospital->getQuota(),
+			'filled' => $hospital->getFilled(),
+			'doctor_number' => $hospital->getDoctorNumber(),
+			'nurse_number' => $hospital->getNurseNumber(),
+			'personnel_number' => $hospital->getPersonnelNumber(),
+			'id' => $hospital->getId()
+		];
+
+		$result = $this->db->execute($sql, $params);
+
+		return $result;
+	}
+
 }

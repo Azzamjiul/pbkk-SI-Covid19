@@ -1,10 +1,10 @@
 <?php
 
-namespace KCV\Dashboard\Core\Domain\Model;
+namespace KCV\Dashboard\Core\Application\Service\EditHospital;
 
-class Hospital
-{   
-    private $id;
+class EditHospitalRequest
+{
+	private $id;
     
     private $district_id;
 
@@ -21,27 +21,17 @@ class Hospital
     private $nurse_number;
 
 	private $personnel_number;
-	
-	private $queue_status;
 
-	private string $namaKecamatan;
-
-	private string $namaKabupaten;
-
-	private string $namaProvinsi;
-
-    public function __construct(
-		$name, 
-		$address, 
-		$district_id = NULL, 
-		$quota = NULL, 
-		$filled = NULL, 
-		$doctor_number = NULL,
-		$nurse_number = NULL, 
-		$personnel_number = NULL,
-		$queue_status = 0,
-		$id = NULL
-		)
+	public function __construct(
+		$name,
+		$district_id,
+		$address,
+		$quota,
+		$filled,
+		$doctor_number,
+		$nurse_number,
+		$personnel_number,
+		$id)
 	{
 		$this->id = $id;
         $this->district_id = $district_id;
@@ -52,7 +42,6 @@ class Hospital
         $this->doctor_number = $doctor_number;
         $this->nurse_number = $nurse_number;
 		$this->personnel_number = $personnel_number;
-		$this->queue_status = $queue_status;
 	}
 
 	public function getId()
@@ -143,45 +132,5 @@ class Hospital
 	public function setPersonnelNumber($personnel_number)
 	{
 		$this->personnel_number = $personnel_number;
-	}
-	
-	public function getQueueStatus()
-	{
-		return $this->queue_status;
-	}
-
-	public function setQueueStatus($queue_status)
-	{
-		$this->queue_status = $queue_status;
-	}
-
-	public function getNamaKecamatan()
-	{
-		return $this->namaKecamatan;
-	}
-
-	public function setNamaKecamatan($namaKecamatan)
-	{
-		$this->namaKecamatan = $namaKecamatan;
-	}
-
-	public function getNamaKabupaten()
-	{
-		return $this->namaKabupaten;
-	}
-
-	public function setNamaKabupaten($namaKabupaten)
-	{
-		$this->namaKabupaten = $namaKabupaten;
-	}
-
-	public function getNamaProvinsi()
-	{
-		return $this->namaProvinsi;
-	}
-
-	public function setNamaProvinsi($namaProvinsi)
-	{
-		$this->namaProvinsi = $namaProvinsi;
 	}
 }
