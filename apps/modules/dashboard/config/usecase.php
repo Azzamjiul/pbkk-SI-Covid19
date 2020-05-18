@@ -35,6 +35,8 @@ use KCV\Dashboard\Core\Application\Service\AddQueue\AddQueueService;
 use KCV\Dashboard\Core\Application\Service\EditPoster\EditPosterService;
 use KCV\Dashboard\Core\Application\Service\GetAllPoster\GetAllPosterService;
 use KCV\Dashboard\Core\Application\Service\GetAllQueue\GetAllQueueService;
+use KCV\Dashboard\Core\Application\Service\GetNumberQueue\GetNumberQueueService;
+use KCV\Dashboard\Core\Application\Service\GetNumberUserQueue\GetNumberUserQueueService;
 
 //==================
 //-----Queue Usecase
@@ -45,6 +47,14 @@ $di->set('addQueueService', function() use ($di) {
 
 $di->set('getAllQueueService', function() use ($di) {
     return new GetAllQueueService($di->get('sqlServerQueueRepository'));
+});
+
+$di->set('getNumberQueueService', function() use ($di) {
+    return new GetNumberQueueService($di->get('sqlServerQueueRepository'));
+});
+
+$di->set('getNumberUserQueueService', function() use ($di) {
+    return new GetNumberUserQueueService($di->get('sqlServerQueueRepository'));
 });
 
 //=====================
