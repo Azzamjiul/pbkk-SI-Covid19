@@ -40,7 +40,7 @@ class AddPasienRequest
 		?string $riwayatPenyakit,
 		?string $alergi,
 		string $statusId,
-		?int $hospital_id)
+		$hospital_id = NULL)
 	{
 		$this->namaLengkap = $namaLengkap;
 		$this->districtId = $districtId;
