@@ -155,7 +155,7 @@ class SqlServerPasienRepository implements PasienRepositoryInterface
 			alergi=:alergi, 
 			status_id=:status_id, 
 			timestamp=:timestamp,
-			hospital_id=:hospital-id
+			hospital_id=:hospital_id
 		WHERE id=:id";
 		
 		$params = [

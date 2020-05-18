@@ -277,6 +277,7 @@ $router->addPost('/rumah-sakit/admin/add/submit', [
     'action' => 'addAdminSubmit'
 ]);
 
+// pasien rumah sakit
 $router->addGet('/rumah-sakit/pasien', [
     'namespace' => $namespace,
     'module' => 'dashboard',
@@ -296,6 +297,22 @@ $router->addPost('/rumah-sakit/pasien/add/submit', [
     'module' => 'dashboard',
     'controller' => 'hospitalAdmin',
     'action' => 'addPasienSubmit'
+]);
+
+$router->addGet('/rumah-sakit/pasien/:params/edit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'editPasien',
+    'params' => 1
+]);
+
+$router->addPost('/rumah-sakit/pasien/:params/edit/submit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'editPasienSubmit',
+    'params' => 1
 ]);
 
 //=================

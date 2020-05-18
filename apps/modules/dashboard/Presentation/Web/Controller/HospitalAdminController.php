@@ -222,7 +222,7 @@ class HospitalAdminController extends BaseController
 		}
 	}
 
-	public function editAction($pasienId)
+	public function editPasienAction($pasienId)
 	{
 		$request = new FindPasienByIdRequest($pasienId);
 
@@ -231,10 +231,10 @@ class HospitalAdminController extends BaseController
 		$this->setProvinceView();
 		$this->setStatusCovid19View();
 		$this->view->setVar('pasien', $pasien);
-		$this->view->pick('admin/pasien/edit');
+		$this->view->pick('hospital/pasien/edit');
 	}
 
-	public function editSubmitAction($pasienId)
+	public function editPasienSubmitAction($pasienId)
 	{
 		$namaLengkap = $this->request->getPost('namaLengkap');
 		$districtId = $this->request->getPost('districtId');
@@ -247,6 +247,7 @@ class HospitalAdminController extends BaseController
 		$riwayatPenyakit = $this->request->getPost('riwayatPenyakit');
 		$alergi = $this->request->getPost('alergi');
 		$statusId = $this->request->getPost('statusId');
+		$hospital_id = $this->session->auth['hospital_id'];
 
 		// TODO: add handler
 		try {
@@ -262,13 +263,14 @@ class HospitalAdminController extends BaseController
 				$jenisPenyakit,
 				$riwayatPenyakit,
 				$alergi,
-				$statusId
+				$statusId,
+				$hospital_id
 			);
 
 			$this->editPasienService->execute($request);
 
 			$this->flashSession->success('Edit data pasien berhasil');
-			$this->response->redirect('admin/pasien');
+			$this->response->redirect('rumah-sakit/pasien');
 		} catch(\Phalcon\Exception $e) {
 			throw $e;
 		}
@@ -288,7 +290,7 @@ class HospitalAdminController extends BaseController
 				$this->flashSession->error('Gagal menghapus data pasien');
 			}
 
-			$this->response->redirect('admin/pasien');
+			$this->response->redirect('hospital/pasien');
 		}
 	}
 }

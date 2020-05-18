@@ -54,7 +54,7 @@
         {% if pasien.getHospitalId()==hospital_id %}
         <tr>
             <td class="align-middle text-center">
-                <a href="{{ url('/admin/pasien/' ~ pasien.getId().id() ~ '/edit') }}"><button class="btn btn-warning btn-icon-split btn-sm" style="margin-bottom: 6px;">
+                <a href="{{ url('/rumah-sakit/pasien/' ~ pasien.getId().id() ~ '/edit') }}"><button class="btn btn-warning btn-icon-split btn-sm" style="margin-bottom: 6px;">
                     <span class="icon text-white-50">
                         <i class="fas fa-info-circle"></i>
                     </span>
