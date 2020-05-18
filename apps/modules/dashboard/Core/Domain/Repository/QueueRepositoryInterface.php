@@ -6,5 +6,7 @@ use KCV\Dashboard\Core\Domain\Model\Queue;
 
 interface QueueRepositoryInterface 
 {
-	public function addQueue(Queue $queue);
+    public function addQueue(Queue $queue);
+    
+    public function getAllQueue() : array;
 }

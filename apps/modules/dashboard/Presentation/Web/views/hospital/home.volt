@@ -12,7 +12,7 @@
 
 {% block content %}
 <div class="text-center mb-5 mt-1">
-    <h1> Antrean Rumah Sakit </h1>
+    <h1> Antrean Rumah Sakit {{ hospital.getName() }} </h1>
 </div>
 <p>{{ this.flashSession.output() }}</p>
 <div class="card shadow mb-4">

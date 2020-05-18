@@ -278,6 +278,14 @@ $router->addPost('/rumah-sakit/admin/add/submit', [
 ]);
 
 // pasien rumah sakit
+
+$router->addPost('/rumah-sakit/pasien/delete', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'deletePasien',
+]);
+
 $router->addGet('/rumah-sakit/pasien', [
     'namespace' => $namespace,
     'module' => 'dashboard',
@@ -314,6 +322,22 @@ $router->addPost('/rumah-sakit/pasien/:params/edit/submit', [
     'action' => 'editPasienSubmit',
     'params' => 1
 ]);
+
+$router->addGet('/rumah-sakit/profil', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'hospitalProfile'
+]);
+
+// Antrean
+$router->addGet('/rumah-sakit/pengantre', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'queueList'
+]);
+
 
 //=================
 //-----Antrean User

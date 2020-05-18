@@ -17,7 +17,8 @@ class SqlServerQueueRepository implements QueueRepositoryInterface
 		$this->db = $db;
 	}
 
-    public function addQueue(Queue $queue){
+    public function addQueue(Queue $queue)
+    {
         $sql = "INSERT INTO antrean (timestamp, user_id, hospital_id, status) VALUES(:timestamp, :user_id, :hospital_id, :status)";
 		$params = [
 			'timestamp' => date("Y-m-d H:i:s"),
@@ -34,5 +35,34 @@ class SqlServerQueueRepository implements QueueRepositoryInterface
         $result2 = $this->db->execute($sql2, $params2);
 
 		return $result2;
+    }
+
+    public function getAllQueue() : array
+    {
+        $sql = "SELECT * FROM antrean WHERE timestamp > convert(date,
+        dateadd(day,
+          1-day(current_timestamp) ,
+          current_timestamp
+          )
+        ) ORDER BY id ASC";
+        
+        $results = $this->db->fetchAll($sql, \Phalcon\Db\Enum::FETCH_ASSOC);
+		
+		$queues = [];
+		if($results) {
+			foreach ($results as $result) {
+				$queue = new Queue(
+					$result['user_id'],
+					$result['hospital_id'],
+					$result['status'],
+					$result['timestamp'],
+					$result['id']
+				);
+
+				array_push($queues, $queue);
+			}
+		}
+
+		return $queues;
     }
 }

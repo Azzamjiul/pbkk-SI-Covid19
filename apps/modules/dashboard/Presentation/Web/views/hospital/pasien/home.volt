@@ -74,7 +74,7 @@
             <td>{{ pasien.getJenisKelamin() }}</td>
             <td>{{ pasien.getNamaStatus() }}</td>
 
-            <form method="post" id="deletePasien" action="{{ url('admin/pasien/delete' ) }}">
+            <form method="post" id="deletePasien" action="{{ url('rumah-sakit/pasien/delete' ) }}">
                 <input name="_method" type="hidden" value="DELETE">
                 <input type="hidden" name="id" id="idPasien">
             </form> 

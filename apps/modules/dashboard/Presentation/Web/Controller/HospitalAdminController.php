@@ -16,6 +16,7 @@ use KCV\Dashboard\Core\Application\Service\EditPasien\EditPasienRequest;
 use KCV\Dashboard\Core\Application\Service\EditPasien\EditPasienService;
 use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdRequest;
 use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdService;
+use KCV\Dashboard\Core\Application\Service\GetAllQueue\GetAllQueueService;
 use Phalcon\Http\Request;
 use Phalcon\Security;
 
@@ -66,6 +67,11 @@ class HospitalAdminController extends BaseController
 	 */
 	protected $editPasienService;
 
+	/**
+	 * @var GetAllQueueService
+	 */
+	protected $getAllQueueService;
+
 	public function initialize()
 	{
 		$this->authorized();
@@ -80,6 +86,7 @@ class HospitalAdminController extends BaseController
 		$this->deletePasienService = $this->getDI()->get('deletePasienService');
 		$this->findPasienByIdService = $this->getDI()->get('findPasienByIdService');
 		$this->editPasienService = $this->getDI()->get('editPasienService');
+		$this->getAllQueueService = $this->getDI()->get('getAllQueueService');
 	}
 
 	public function indexAction()
@@ -276,7 +283,7 @@ class HospitalAdminController extends BaseController
 		}
 	}
 
-	public function deleteAction()
+	public function deletePasienAction()
 	{
 		if($this->request->isPost()) {
 			try {
@@ -292,5 +299,29 @@ class HospitalAdminController extends BaseController
 
 			$this->response->redirect('rumah-sakit/pasien');
 		}
+	}
+
+	public function queueListAction()
+	{
+		$queues = $this->getAllQueueService->execute();
+		$users = $this->getAllUserService->execute();
+
+		$this->view->setVar('users', $users);
+		$this->view->setVar('queues', $queues);
+
+		$this->view->pick('hospital/pengantre/home');
+	}
+
+	public function hospitalProfileAction()
+	{
+		try {
+            $hospital = $this->findHospitalService->execute($this->session->auth['hospital_id']);
+        } catch(\Exception $e) {
+            throw $e->getMessage();
+        }
+
+        $this->view->setVar('hospital', $hospital);
+
+		$this->view->pick('hospital/profile/home');
 	}
 }
