@@ -20,7 +20,7 @@ $container['router'] = function() use ($defaultModule, $modules) {
 	 */
 	$router->notFound(
 		[
-			'namespace' => 'Its\Common\Controller',
+			'namespace' => 'KCV\Common\Controller',
 			'controller' => 'error',
 			'action'     => 'route404',
 		]
@@ -30,25 +30,25 @@ $container['router'] = function() use ($defaultModule, $modules) {
 	 * Error Routing
 	 */
 	$router->addGet('/forbidden', [
-		'namespace' => "Its\Common\Controller",
+		'namespace' => "KCV\Common\Controller",
 		'controller' => "error",
 		'action' => "route403"
 	]);
 	
 	$router->addGet('/error', [
-		'namespace' => "Its\Common\Controller",
+		'namespace' => "KCV\Common\Controller",
 		'controller' => "error",
 		'action' => "routeErrorCommon"
 	]);
 	
 	$router->addGet('/expired', [
-		'namespace' => "Its\Common\Controller",
+		'namespace' => "KCV\Common\Controller",
 		'controller' => "error",
 		'action' => "routeErrorState"
 	]);
 
 	$router->addGet('/maintenance', [
-		'namespace' => "Its\Common\Controller",
+		'namespace' => "KCV\Common\Controller",
 		'controller' => "error",
 		'action' => "maintenance"
 	]);
