@@ -290,7 +290,7 @@ class HospitalAdminController extends BaseController
 				$this->flashSession->error('Gagal menghapus data pasien');
 			}
 
-			$this->response->redirect('hospital/pasien');
+			$this->response->redirect('rumah-sakit/pasien');
 		}
 	}
 }
