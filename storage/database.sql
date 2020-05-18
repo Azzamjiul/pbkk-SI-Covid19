@@ -144,13 +144,13 @@ CREATE TABLE TestDB.dbo.pasiens
 );
 GO
 
--- Create a new table called 'antrean' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'antrean' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.antrean', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.antrean
+IF OBJECT_ID('TestDB.dbo.antrean', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.antrean
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.antrean
+CREATE TABLE TestDB.dbo.antrean
 (
     id [INT] NOT NULL IDENTITY(1,1) PRIMARY KEY, -- primary key column
     [timestamp] DATETIME,
@@ -161,13 +161,13 @@ CREATE TABLE fp_pbkk.dbo.antrean
 );
 GO
 
--- Create a new table called 'hospital' in schema 'fp_pbkk.dbo'
+-- Create a new table called 'hospital' in schema 'TestDB.dbo'
 -- Drop the table if it already exists
-IF OBJECT_ID('fp_pbkk.dbo.hospital', 'U') IS NOT NULL
-DROP TABLE fp_pbkk.dbo.hospital
+IF OBJECT_ID('TestDB.dbo.hospital', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.hospital
 GO
 -- Create the table in the specified schema
-CREATE TABLE fp_pbkk.dbo.hospital
+CREATE TABLE TestDB.dbo.hospital
 (
     id [INT] NOT NULL IDENTITY(1,1) PRIMARY KEY, -- primary key column
     name [VARCHAR](256) NOT NULL,
@@ -183,33 +183,48 @@ CREATE TABLE fp_pbkk.dbo.hospital
 );
 GO
 
+-- Create a new table called 'posters' in schema 'TestDB.dbo'
+-- Drop the table if it already exists
+IF OBJECT_ID('TestDB.dbo.posters', 'U') IS NOT NULL
+DROP TABLE TestDB.dbo.posters
+GO
+-- Create the table in the specified schema
+CREATE TABLE TestDB.dbo.posters
+(
+  id [INT] NOT NULL IDENTITY(1,1) PRIMARY KEY, -- primary key column
+  name [NVARCHAR](100) NOT NULL,
+  path [NVARCHAR](255) NOT NULL,
+  [timestamp] [DATETIME] NULL
+);
+GO
+
 -- Default value hospital
-ALTER TABLE fp_pbkk.dbo.hospital
+ALTER TABLE TestDB.dbo.hospital
   ADD CONSTRAINT DF_Quota
   DEFAULT 0 FOR quota;
 GO
 
-ALTER TABLE fp_pbkk.dbo.hospital
+ALTER TABLE TestDB.dbo.hospital
   ADD CONSTRAINT DF_Filled
   DEFAULT 0 FOR filled;
 GO
 
-ALTER TABLE fp_pbkk.dbo.hospital
+ALTER TABLE TestDB.dbo.hospital
   ADD CONSTRAINT DF_Doctor
   DEFAULT 0 FOR doctor_number;
 GO
 
-ALTER TABLE fp_pbkk.dbo.hospital
+ALTER TABLE TestDB.dbo.hospital
   ADD CONSTRAINT DF_Nurse
   DEFAULT 0 FOR nurse_number;
 GO
 
-ALTER TABLE fp_pbkk.dbo.hospital
+ALTER TABLE TestDB.dbo.hospital
   ADD CONSTRAINT DF_Personnel
   DEFAULT 0 FOR personnel_number;
 GO
 
-ALTER TABLE fp_pbkk.dbo.hospital
+ALTER TABLE TestDB.dbo.hospital
   ADD CONSTRAINT DF_Queue
   DEFAULT 0 FOR queue_status;
 GO
