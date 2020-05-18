@@ -41,15 +41,47 @@
 .kartu-biru {
   background: linear-gradient(150deg, #13f1fc, #0470dc 100%);
 }
+
+.carousel {
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto;
+}
 </style>
 
 {% endblock %}
 
 {% block content %}
 <p>{{ this.flashSession.output() }}</p>
-<div class="text-center mb-5 font-weight-bold">
-    <h3> SISTEM INFORMASI COVID-19 (Beta version) </h3>
+<div class="text-center mb-4 font-weight-bold">
+    <h3> SISTEM INFORMASI COVID-19 </h3>
 </div>
+
+<div class="justify-content-center text-center">
+  <div class="carousel slide mb-5" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{ url('assets/dummy-720.png') }}" class="rounded d-block w-100 gambar-slide" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url('assets/dummy-720.png') }}" class="rounded d-block w-100 gambar-slide" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{{ url('assets/dummy-720.png') }}" class="d-block w-100 gambar-slide" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</div>
+
 
 {% if auth is defined %}
 {% if auth['queue_status'] == 1 %}

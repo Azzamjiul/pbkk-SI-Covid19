@@ -1,6 +1,6 @@
 <?php
 
-namespace KCv\Dashboard\Core\Application\Service\FindPosterById;
+namespace KCV\Dashboard\Core\Application\Service\FindPosterById;
 
 use KCV\Dashboard\Core\Domain\Repository\PosterRepositoryInterface;
 

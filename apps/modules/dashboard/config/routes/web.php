@@ -100,6 +100,28 @@ $router->addGet('/admin/poster', [
     'action' => 'index'
 ]);
 
+$router->addGet('/admin/poster/add', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'poster',
+    'action' => 'add'
+]);
+
+$router->addPost('/admin/poster/add/submit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'poster',
+    'action' => 'addSubmit'
+]);
+
+$router->addGet('/admin/poster/:params/edit', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'poster',
+    'action' => 'edit',
+    'params' => 1
+]);
+
 //===========
 //-----Pasien
 //===========

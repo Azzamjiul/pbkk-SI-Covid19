@@ -1,6 +1,6 @@
 <?php
 
-namespace KCv\Dashboard\Core\Application\Service\FindPosterById;
+namespace KCV\Dashboard\Core\Application\Service\FindPosterById;
 
 class FindPosterByIdRequest
 {

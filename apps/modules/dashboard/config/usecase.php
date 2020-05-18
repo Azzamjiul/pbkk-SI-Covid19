@@ -33,6 +33,7 @@ use KCV\Dashboard\Core\Application\Service\EditHospital\EditHospitalService;
 
 use KCV\Dashboard\Core\Application\Service\AddQueue\AddQueueService;
 use KCV\Dashboard\Core\Application\Service\EditPoster\EditPosterService;
+use KCV\Dashboard\Core\Application\Service\FindPosterById\FindPosterByIdService;
 use KCV\Dashboard\Core\Application\Service\GetAllPoster\GetAllPosterService;
 use KCV\Dashboard\Core\Application\Service\GetAllQueue\GetAllQueueService;
 
@@ -193,4 +194,8 @@ $di->set('editPosterService', function() use ($di) {
 
 $di->set('getAllPosterService', function() use ($di) {
     return new GetAllPosterService($di->get('sqlServerPosterRepository'));
+});
+
+$di->set('findPosterByIdService', function() use ($di) {
+    return new FindPosterByIdService($di->get('sqlServerPosterRepository'));
 });
