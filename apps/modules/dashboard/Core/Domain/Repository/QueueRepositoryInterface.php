@@ -9,4 +9,6 @@ interface QueueRepositoryInterface
     public function addQueue(Queue $queue);
     
     public function getAllQueue() : array;
+
+    public function getNumberQueue($hospital_id) : array;
 }

@@ -65,4 +65,29 @@ class SqlServerQueueRepository implements QueueRepositoryInterface
 
 		return $queues;
     }
+
+    public function getNumberQueue($hospital_id) : array{
+		$sql = "SELECT status, COUNT(*) as jumlah
+		FROM antrean
+		WHERE timestamp > convert(date,
+        dateadd(day,
+          1-day(current_timestamp) ,
+          current_timestamp
+          )
+		) AND hospital_id = :hospital_id
+		GROUP BY status
+		ORDER BY status ASC";
+		$params = [ 'hospital_id' => $hospital_id ];
+		
+		$results = $this->db->fetchAll($sql, \Phalcon\Db\Enum::FETCH_ASSOC, $params);
+
+		$jumlah = [];
+		if($results) {
+			foreach($results as $result) {
+				array_push($jumlah, $result['jumlah']);
+			}
+		}
+
+		return $jumlah;
+    }
 }

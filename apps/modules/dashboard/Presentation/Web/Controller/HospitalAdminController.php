@@ -82,7 +82,8 @@ class HospitalAdminController extends BaseController
 	public function initialize()
 	{
 		$this->authorized();
-        $this->hasHospitalPrivilege();
+		$this->hasHospitalPrivilege();
+		$this->setAuthView();
         
         $this->findHospitalService = $this->getDI()->get('findHospitalService');
         $this->updateHospitalQueueStatusService = $this->getDI()->get('updateHospitalQueueStatusService');
