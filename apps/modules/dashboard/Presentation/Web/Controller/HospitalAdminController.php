@@ -110,8 +110,18 @@ class HospitalAdminController extends BaseController
 
         $this->view->setVar('hospital', $hospital);
         $this->view->setVar('mydate', $mydate);
-        
+
 		$this->view->pick('hospital/home');
+
+		$this->dispatcher->forward(
+			[
+				'controller' => 'queue',
+				'action' => 'getNumber',
+				'params' => [
+						$this->session->auth['hospital_id']
+					]
+			]
+		);
     }
     
     public function updateHospitalQueueStatusAction()

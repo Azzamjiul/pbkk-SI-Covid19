@@ -18,11 +18,12 @@ class QueueController extends BaseController
 	{
 		$this->getNumberQueueService = $this->getDI()->get('getNumberQueueService');
 	}
+
 	public function getNumberAction($hospital_id)
 	{
         $jumlah = $this->getNumberQueueService->execute($hospital_id);
 
-        return $jumlah;
+		$this->view->setVar('jumlah', $jumlah);
     }
     
     public function getNumberUserAction($user_id)
