@@ -35,6 +35,13 @@
     </li>
 
     <!-- Nav Item - Tables -->
+    <li class="nav-item" id="nav-poster">
+    <a class="nav-link" href="{{ url('admin/poster') }}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Poster</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
     <li class="nav-item" id="nav-pasien">
     <a class="nav-link" href="{{ url('admin/pasien') }}">
         <i class="fas fa-fw fa-table"></i>

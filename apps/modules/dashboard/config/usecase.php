@@ -26,10 +26,13 @@ use KCV\Dashboard\Core\Application\Service\LoginUser\LoginUserService;
 
 use KCV\Dashboard\Core\Application\Service\GetAllHospital\GetAllHospitalService;
 use KCV\Dashboard\Core\Application\Service\AddHospital\AddHospitalService;
+use KCV\Dashboard\Core\Application\Service\AddPoster\AddPosterService;
 use KCV\Dashboard\Core\Application\Service\FindHospital\FindHospitalService;
 use KCV\Dashboard\Core\Application\Service\UpdateHospitalQueueStatus\UpdateHospitalQueueStatusService;
 
 use KCV\Dashboard\Core\Application\Service\AddQueue\AddQueueService;
+use KCV\Dashboard\Core\Application\Service\EditPoster\EditPosterService;
+use KCV\Dashboard\Core\Application\Service\GetAllPoster\GetAllPosterService;
 use KCV\Dashboard\Core\Application\Service\GetAllQueue\GetAllQueueService;
 
 //==================
@@ -130,6 +133,7 @@ $di->set('getCountKasusService', function() use ($di) {
 $di->set('getCountKasusByPlaceService', function() use ($di) {
     return new GetCountKasusByPlaceService($di->get('sqlServerPasienRepository'));
 });
+
 //==========================
 //-----Cek Kesehatan Usecase
 //==========================
@@ -169,4 +173,19 @@ $di->set('getRegenciesService', function() use ($di) {
 
 $di->set('getDistrictsService', function() use ($di) {
     return new GetDistrictsService($di->get('sqlServerDistrictRepository'));
+});
+
+//===================
+//-----Poster Usecase
+//===================
+$di->set('addPosterService', function() use ($di) {
+    return new AddPosterService($di->get('sqlServerPosterRepository'));
+});
+
+$di->set('editPosterService', function() use ($di) {
+    return new EditPosterService($di->get('sqlServerPosterRepository'));
+});
+
+$di->set('getAllPosterService', function() use ($di) {
+    return new GetAllPosterService($di->get('sqlServerPosterRepository'));
 });

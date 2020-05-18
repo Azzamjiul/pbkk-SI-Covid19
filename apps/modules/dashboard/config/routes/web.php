@@ -91,6 +91,16 @@ $router->addPost('/admin/pengumuman/add/submit', [
 ]);
 
 //===========
+//-----Poster
+//===========
+$router->addGet('/admin/poster', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'poster',
+    'action' => 'index'
+]);
+
+//===========
 //-----Pasien
 //===========
 $router->addGet('/admin/pasien', [
