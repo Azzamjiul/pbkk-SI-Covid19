@@ -100,9 +100,9 @@
           <tr>
               <th>Nama Rumah Sakit</th>
               <th>Alamat</th>
-              <th>Kecamatan</th>
+              <!-- <th>Kecamatan</th>
               <th>Kota/Kabupaten</th>
-              <th>Provinsi</th>
+              <th>Provinsi</th> -->
               <th>Action</th>
           </tr>
           </thead>
@@ -110,9 +110,9 @@
           <tr>
               <th>Nama Rumah Sakit</th>
               <th>Alamat</th>
-              <th>Kecamatan</th>
+              <!-- <th>Kecamatan</th>
               <th>Kota/Kabupaten</th>
-              <th>Provinsi</th>
+              <th>Provinsi</th> -->
               <th>Action</th>
           </tr>
           </tfoot>
@@ -121,9 +121,9 @@
           <tr>
               <td>{{ hospital.getName() }}</td>
               <td>{{ hospital.getAddress() }}</td>
-              <td>{{ hospital.getDistrictId() }}</td>
+              <!-- <td>{{ hospital.getDistrictId() }}</td>
               <td>Masih Belum Buat Fungsinya</td>
-              <td>Masih Belum Buat Fungsinya</td>
+              <td>Masih Belum Buat Fungsinya</td> -->
               <td><form method='POST' action='/antre/get'><input name='hospital_id' type='hidden' value={{ hospital.getId() }}><button class='btn btn-primary btn-submit' type='submit'>Antre</button></form></td>
           </tr>
           {% endfor %}

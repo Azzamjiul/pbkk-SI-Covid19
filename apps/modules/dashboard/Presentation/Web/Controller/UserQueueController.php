@@ -63,7 +63,13 @@ class UserQueueController extends BaseController
         // Check request
 		if(!$this->request->isPost()) {
 			return $this->response->redirect('antre');
-        }
+		}
+		
+		if($this->session->auth['queue_status'] == 1)
+		{
+			$this->flashSession->error("Anda Telah Mengambil Antrean");
+			return $this->response->redirect('antre');
+		}
         
 		// Handle request
         $hospital_id = $this->request->getPost('hospital_id');
