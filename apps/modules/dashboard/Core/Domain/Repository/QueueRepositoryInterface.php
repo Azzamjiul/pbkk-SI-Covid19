@@ -11,4 +11,12 @@ interface QueueRepositoryInterface
     public function getAllQueue() : array;
 
     public function getNumberQueue($hospital_id) : array;
+
+    public function getNumberAllQueue() : array;
+
+    public function getNumberUserQueue($user_id) : ?array;
+
+    public function nextQueue($hospital_id);
+
+    public function backQueue($hospital_id);
 }

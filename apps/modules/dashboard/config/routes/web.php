@@ -377,6 +377,20 @@ $router->addGet('/rumah-sakit/pengantre', [
     'action' => 'queueList'
 ]);
 
+$router->addGet('/rumah-sakit/queue/next', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'nextQueue'
+]);
+
+$router->addGet('/rumah-sakit/queue/back', [
+    'namespace' => $namespace,
+    'module' => 'dashboard',
+    'controller' => 'hospitalAdmin',
+    'action' => 'backQueue'
+]);
+
 
 //=================
 //-----Antrean User

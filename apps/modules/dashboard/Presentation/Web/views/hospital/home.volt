@@ -26,11 +26,11 @@
         </h5>
         <h4><?php echo "$mydate[weekday], $mydate[mday] $mydate[month] $mydate[year]"; ?></h4>
         <br/>
-        <h1>10/100</h1>
+        <h1>{{ jumlah[1]+1 }} / {{ jumlah[1]+jumlah[0] }}</h1>
         <br/>
         <table>
-            <tr><a style="margin-right: 1rem;" class="btn btn-primary" href="{{url('/')}}">Back</a></tr>
-            <tr><a style="margin-left: 1rem;" class="btn btn-primary" href="{{url('/')}}">Next</a></tr>
+            <tr><a style="margin-right: 1rem;" class="btn btn-primary" href="{{url('rumah-sakit/queue/back')}}">Back</a></tr>
+            <tr><a style="margin-left: 1rem;" class="btn btn-primary" href="{{url('rumah-sakit/queue/next')}}">Next</a></tr>
         </table>
         <br/>
         <form method="POST" action="{{ url('/rumah-sakit/update-queue-status') }}">

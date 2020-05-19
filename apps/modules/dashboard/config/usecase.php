@@ -37,7 +37,11 @@ use KCV\Dashboard\Core\Application\Service\FindPosterById\FindPosterByIdService;
 use KCV\Dashboard\Core\Application\Service\GetAllPoster\GetAllPosterService;
 use KCV\Dashboard\Core\Application\Service\GetAllQueue\GetAllQueueService;
 use KCV\Dashboard\Core\Application\Service\GetNumberQueue\GetNumberQueueService;
+use KCV\Dashboard\Core\Application\Service\GetNumberAllQueue\GetNumberAllQueueService;
 use KCV\Dashboard\Core\Application\Service\GetNumberUserQueue\GetNumberUserQueueService;
+use KCV\Dashboard\Core\Application\Service\NextQueue\NextQueueService;
+use KCV\Dashboard\Core\Application\Service\BackQueue\BackQueueService;
+
 
 //==================
 //-----Queue Usecase
@@ -54,8 +58,20 @@ $di->set('getNumberQueueService', function() use ($di) {
     return new GetNumberQueueService($di->get('sqlServerQueueRepository'));
 });
 
+$di->set('getNumberAllQueueService', function() use ($di) {
+    return new GetNumberAllQueueService($di->get('sqlServerQueueRepository'));
+});
+
 $di->set('getNumberUserQueueService', function() use ($di) {
     return new GetNumberUserQueueService($di->get('sqlServerQueueRepository'));
+});
+
+$di->set('nextQueueService', function() use ($di) {
+    return new NextQueueService($di->get('sqlServerQueueRepository'));
+});
+
+$di->set('backQueueService', function() use ($di) {
+    return new BackQueueService($di->get('sqlServerQueueRepository'));
 });
 
 //=====================

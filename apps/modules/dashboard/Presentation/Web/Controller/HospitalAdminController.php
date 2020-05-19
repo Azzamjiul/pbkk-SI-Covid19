@@ -19,6 +19,9 @@ use KCV\Dashboard\Core\Application\Service\FindPasienById\FindPasienByIdService;
 use KCV\Dashboard\Core\Application\Service\GetAllQueue\GetAllQueueService;
 use KCV\Dashboard\Core\Application\Service\EditHospital\EditHospitalService;
 use KCV\Dashboard\Core\Application\Service\EditHospital\EditHospitalRequest;
+use KCV\Dashboard\Core\Application\Service\NextQueue\NextQueueService;
+use KCV\Dashboard\Core\Application\Service\BackQueue\BackQueueService;
+use KCV\Dashboard\Core\Application\Service\GetNumberUserQueue\GetNumberUserQueueService;
 use Phalcon\Http\Request;
 use Phalcon\Security;
 
@@ -75,9 +78,24 @@ class HospitalAdminController extends BaseController
 	protected $getAllQueueService;
 
 	/**
-	 * @var EditHospitalService
+	 * @var NextQueueService
 	 */
 	protected $editHospitalService;
+
+	/**
+	 * @var BackQueueService
+	 */
+	protected $nextQueueService;
+
+	/**
+	 * @var EditHospitalService
+	 */
+	protected $backQueueService;
+
+	/**
+	 * @var GetNumberUserQueueService
+	 */
+	protected $getNumberUserQueueService;
 
 	public function initialize()
 	{
@@ -96,6 +114,9 @@ class HospitalAdminController extends BaseController
 		$this->editPasienService = $this->getDI()->get('editPasienService');
 		$this->getAllQueueService = $this->getDI()->get('getAllQueueService');
 		$this->editHospitalService = $this->getDI()->get('editHospitalService');
+		$this->nextQueueService = $this->getDI()->get('nextQueueService');
+		$this->backQueueService = $this->getDI()->get('backQueueService');
+		$this->getNumberUserQueueService = $this->getDI()->get('getNumberUserQueueService');
 	}
 
 	public function indexAction()
@@ -384,5 +405,17 @@ class HospitalAdminController extends BaseController
 		} catch(\Phalcon\Exception $e) {
 			throw $e;
 		}
+	}
+
+	public function nextQueueAction()
+	{
+		$this->nextQueueService->execute($this->session->auth['hospital_id']);
+		$this->response->redirect('rumah-sakit');
+	}
+
+	public function backQueueAction()
+	{
+		$this->backQueueService->execute($this->session->auth['hospital_id']);
+		$this->response->redirect('rumah-sakit');
 	}
 }

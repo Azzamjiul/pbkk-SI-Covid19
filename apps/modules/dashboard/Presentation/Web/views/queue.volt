@@ -51,6 +51,31 @@
     <h3> SISTEM INFORMASI COVID-19 (Beta version) </h3>
 </div>
 
+{% if queue is defined %}
+<div class="row justify-content-center mb-4">
+  <div class="col-4 col-sm-4 kartu kartu-merah">
+      <h5 class="text-center">ANTREAN</h5>
+      <table>
+        <tr>
+            <td>Status</td>
+            <td>: Sedang Mengantre</td>
+        </tr>
+        <tr>
+            <td>Mengantre di Rumah Sakit</td>
+            <td>: {{ queue['hospital_id'] }}</td>
+        </tr>
+        <tr>
+            <td>Nomor Antrean</td>
+            <td>: {{ queue['queue_number'] }}</td>
+        </tr>
+        <tr>
+            <td>Nomor Rumah Sakit Saat ini</td>
+            <td>: {{ jumlah[1]+1 }}</td>
+        </tr>
+      </table>
+  </div>
+</div>
+{% else %}
 <div class="row justify-content-center mb-4">
   <div class="col-4 col-sm-4 kartu kartu-merah">
       <h5 class="text-center">ANTREAN</h5>
@@ -59,21 +84,10 @@
             <td>Status</td>
             <td>: Belum Mengantre</td>
         </tr>
-        <tr>
-            <td>Mengantre di Rumah Sakit</td>
-            <td>: -</td>
-        </tr>
-        <tr>
-            <td>Nomor Antrean</td>
-            <td>: -</td>
-        </tr>
-        <tr>
-            <td>Nomor Rumah Sakit Saat ini</td>
-            <td>: -</td>
-        </tr>
       </table>
   </div>
 </div>
+{% endif %}
 
 <div class="card shadow mb-4">
   <div class="card-header py-3 d-sm-flex justify-content-between">

@@ -4,6 +4,7 @@ namespace KCV\Dashboard\Presentation\Web\Controller;
 
 use KCV\Dashboard\Core\Application\Service\GetAllHospital\GetAllHospitalService;
 use KCV\Dashboard\Core\Application\Service\AddQueue\AddQueueService;
+use KCV\Dashboard\Core\Application\Service\GetNumberUserQueue\GetNumberUserQueueService;
 
 class UserQueueController extends BaseController
 {
@@ -15,7 +16,12 @@ class UserQueueController extends BaseController
     /**
 	 * @var GetAllHospitalService
 	 */
-    protected $addQueueService;
+	protected $addQueueService;
+	
+	/**
+	 * @var GetNumberUserQueueService
+	 */
+	protected $getNumberUserQueueService;
 
     public function initialize()
     {
@@ -23,14 +29,32 @@ class UserQueueController extends BaseController
 		$this->setAuthView();
         
         $this->getAllHospitalService = $this->getDI()->get('getAllHospitalService');
-        $this->addQueueService = $this->getDI()->get('addQueueService');
+		$this->addQueueService = $this->getDI()->get('addQueueService');
+		$this->getNumberUserQueueService = $this->getDI()->get('getNumberUserQueueService');
+		
     }
 
     public function indexAction()
 	{
 		$hospitals = $this->getAllHospitalService->execute();
-
+		$queue = $this->getNumberUserQueueService->execute($this->session->auth['id']);
+		// var_dump($this->session->auth);
+		
         $this->view->setVar('hospitals', $hospitals);
+		$this->view->setVar('queue', $queue);
+		
+		if($queue){
+			$this->dispatcher->forward(
+				[
+					'controller' => 'queue',
+					'action' => 'getNumber',
+					'params' => [
+							$queue['hospital_id']
+						]
+				]
+			);
+		}
+
         $this->view->pick('queue');
     }
     
