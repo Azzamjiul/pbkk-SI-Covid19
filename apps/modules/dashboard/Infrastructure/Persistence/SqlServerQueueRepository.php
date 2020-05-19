@@ -155,11 +155,13 @@ class SqlServerQueueRepository implements QueueRepositoryInterface
 		$results1 = $this->db->fetchAll($sql1, \Phalcon\Db\Enum::FETCH_ASSOC, $params1);
 
 		$current_row;
+		$user_id;
 
 		if($results1){
 			foreach($results1 as $result){
 				if($result['status']==0){
 					$current_row = $result;
+					$user_id = $result['user_id'];
 					break;
 				}
 			}
@@ -170,6 +172,11 @@ class SqlServerQueueRepository implements QueueRepositoryInterface
 		$params2 = [ 'id' => $current_row['id'] ];
 		$results2 = $this->db->execute($sql2, $params2);
 
+		$sql3 = "UPDATE users SET queue_status=0 WHERE user_id=:user_id";
+        $params3 = [ 'user_id' => $user_id ];
+
+        $result3 = $this->db->execute($sql3, $params3);
+
 		return;
 	}
 
@@ -177,21 +184,18 @@ class SqlServerQueueRepository implements QueueRepositoryInterface
 	{
 		$sql1 = "SELECT * FROM antrean 
 		WHERE hospital_id=:hospital_id
-		ORDER BY id ASC";
+		ORDER BY id DESC";
 		$params1 = [ 'hospital_id' => $hospital_id];
 		$results1 = $this->db->fetchAll($sql1, \Phalcon\Db\Enum::FETCH_ASSOC, $params1);
 
-		// var_dump($results1);
-		// die;
-
-		$back_row;
 		$current_row;
+		$user_id;
 
 		if($results1){
 			foreach($results1 as $result){
-				$back_row = $current_row;
-				$current_row = $result;
-				if($result['status']==0){
+				if($result['status']==1){
+					$current_row = $result;
+					$user_id = $result['user_id'];
 					break;
 				}
 			}
@@ -199,8 +203,13 @@ class SqlServerQueueRepository implements QueueRepositoryInterface
 
 		$sql2 = "UPDATE antrean SET status = 0
 		WHERE id=:id";
-		$params2 = [ 'id' => $back_row['id'] ];
+		$params2 = [ 'id' => $current_row['id'] ];
 		$results2 = $this->db->execute($sql2, $params2);
+
+		$sql3 = "UPDATE users SET queue_status=1 WHERE user_id=:user_id";
+        $params3 = [ 'user_id' => $user_id ];
+
+        $result3 = $this->db->execute($sql3, $params3);
 
 		return;
 	}
