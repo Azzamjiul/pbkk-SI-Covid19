@@ -56,19 +56,23 @@
 <div class="text-center mb-4 font-weight-bold">
     <h3> SISTEM INFORMASI COVID-19 </h3>
 </div>
-
+{% if posters is defined %}
+{% set is_active = 1 %}
 <div class="justify-content-center text-center">
   <div class="carousel slide mb-5" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{{ url('assets/dummy-720.png') }}" class="rounded d-block w-100 gambar-slide" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{{ url('assets/dummy-720.png') }}" class="rounded d-block w-100 gambar-slide" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="{{ url('assets/dummy-720.png') }}" class="d-block w-100 gambar-slide" alt="...">
-      </div>
+    {% for poster in posters %}
+      {% if is_active == 1 %}
+        <div class="carousel-item active">
+          <img src="{{ url('storage/' ~ poster.getPath()) }}" class="rounded d-block w-100 gambar-slide" alt="...">
+        </div>
+        {% set is_active = 0 %}
+      {% else %}
+        <div class="carousel-item">
+          <img src="{{ url('storage/' ~ poster.getPath()) }}" class="rounded d-block w-100 gambar-slide" alt="...">
+        </div>
+      {% endif %}
+    {% endfor %}
     </div>
     <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -81,7 +85,7 @@
   </div>
 
 </div>
-
+{% endif %}
 
 {% if auth is defined %}
 {% if auth['queue_status'] == 1 %}
