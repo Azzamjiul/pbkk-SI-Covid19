@@ -13,7 +13,7 @@ class SqlServerHospitalRepository implements HospitalRepositoryInterface
 	{
 		$this->db = $db;
     }
-    
+
     public function getAllHospital() : ?array
     {
         $sql = "SELECT * FROM HOSPITAL";
